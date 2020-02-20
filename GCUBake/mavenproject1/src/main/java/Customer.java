@@ -10,4 +10,8 @@
  */
 public class Customer {
     
+    
+    String userProgress;
+    int custID;
+    
 }

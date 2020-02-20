@@ -10,4 +10,33 @@
  */
 public class GCUuser {
     
+    private String username;
+    private String title;
+    private String firstName;
+    private String lastName;
+    private int contactNo;
+    private int passCode;
+    private String gcuRole;
+    
+    public static void main(String[]args){
+        
+
+
+
 }
+
+    
+
+    
+public GCUuser(){
+    this.username = username;
+    
+
+
+
+}
+
+  
+    
+}
+
