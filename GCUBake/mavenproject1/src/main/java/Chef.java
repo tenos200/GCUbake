@@ -10,5 +10,18 @@
  */
 public class Chef {
     
+    private String chefID; 
+
+    public String getChefID() {
+        return chefID;
+    }
+
+    public void setChefID(String chefID) {
+        this.chefID = chefID;
+    }
+    
+   
     
 }
+
+ 
