@@ -8,7 +8,7 @@
  *
  * @author timenos
  */
-public class GCUuser {
+public class GCUuser{
     
     private String username;
     private String title;
@@ -22,21 +22,67 @@ public class GCUuser {
         
 
 
-
 }
 
     
 
     
 public GCUuser(){
-    this.username = username;
     
+
+
+}
+
+private void register(){
 
 
 
 }
 
+private gcuRole(){
+
+
+
+	return role;
+}
+
+private void setFirstname(){
+
+
+}
+
+private void setLastname(){
+
+
+
+
+
+}
   
-    
+private void setContactno(){
+
+
 }
+    
+
+
+private void setTitle(){
+
+
+}
+
+
+private void setUsername(){
+
+
+}
+private void loginUser(){
+
+
+
+}
+
+
+}
+
 
