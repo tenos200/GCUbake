@@ -1,12 +1,11 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This is class that will have the functions of the lessons
+This class will link to others to gather data between each other
  */
 
 /**
  *
- * @author timenos
+ * @author timenos, aadamrazak
  */
 public class GCULessons {
     
@@ -49,6 +48,19 @@ public class GCULessons {
         this.status = status;
     }
     
+    //contructor 
+
+     GCULessons() 
+     {}
+
+    public GCULessons(String type, String lessonID, String name, String status) {
+        this.type = type;
+        this.lessonID = lessonID;
+        this.name = name;
+        this.status = status;
+    }
+    
+     
     
     
 }

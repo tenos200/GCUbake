@@ -1,17 +1,51 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class will handle customers request 
+* such as booking and canceling lessons
  */
 
 /**
  *
- * @author timenos
+ * @author timenos , aadamrazak
  */
 public class Customer {
     
+    //variables
+    private String userProgress;
+    private int custID;
+
+    Customer(){}
     
-    String userProgress;
-    int custID;
+    public Customer(String pUserProgress, int pCustID) {
+        this.userProgress = pUserProgress;
+        this.custID = pCustID;
+    }
     
-}
+    public String getUserProgress() {
+        return userProgress;
+    }
+
+    public void setUserProgress(String userProgress) {
+        this.userProgress = userProgress;
+    }
+
+    public int getCustID() {
+        return custID;
+    }
+
+    public void setCustID(int custID) {
+        this.custID = custID;
+    }
+
+    
+    //Methods
+    public void bookLesson()
+    {}
+    
+    public void cancelLesson()
+    {}
+    
+    
+    
+    
+    
+}//End of class

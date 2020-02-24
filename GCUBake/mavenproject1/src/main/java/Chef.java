@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This class is handle chef for creating lesson
  */
 
 /**
@@ -10,6 +8,8 @@
  */
 public class Chef {
     
+    
+    //vaioables
     private String chefID; 
 
     public String getChefID() {
@@ -20,8 +20,24 @@ public class Chef {
         this.chefID = chefID;
     }
     
-   
+   //contructor
+    Chef(){}
+
+    public Chef(String chefID) {
+        this.chefID = chefID;
+    }
+        
+    //Methods
+    public void createLesson()
+    {}
     
-}
+    public void endLesson()
+    {}
+    
+    
+          
+    
+    
+}// end of class 
 
  
