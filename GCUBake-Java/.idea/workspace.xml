@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="44ca7c8f-084e-4090-bff9-4f520e6ade52" name="Default Changelist" comment="" />
+    <list default="true" id="9add7ffc-3869-4efc-9144-040ed1d82815" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1YFWMm0skgXUJQKT2YROrpsOH3x" />
+  <component name="ProjectId" id="1YFZd0P4RJJ3ik3fNrz9djMPUjF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -20,34 +21,23 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GCUBake-Java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44ca7c8f-084e-4090-bff9-4f520e6ade52" name="Default Changelist" comment="" />
-      <created>1582538776807</created>
+      <changelist id="9add7ffc-3869-4efc-9144-040ed1d82815" name="Default Changelist" comment="" />
+      <created>1582540385992</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582538776807</updated>
-      <workItem from="1582538781844" duration="773000" />
-      <workItem from="1582539890704" duration="497000" />
+      <updated>1582540385992</updated>
+      <workItem from="1582540387415" duration="62000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1582540378380">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582540378380" />
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1582539893002">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="470" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582539893002" />
   </component>
 </project>
