@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9add7ffc-3869-4efc-9144-040ed1d82815" name="Default Changelist" comment="">
+      <change afterPath="$USER_HOME$/.idea/GCUbake.iml" afterDir="false" />
+      <change afterPath="$USER_HOME$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$USER_HOME$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/GCUBake-Java.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_automatic_build" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/.netbeans_update_resources" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Chef.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/Customer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GCULessons.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/GCUuser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manifest.mf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/build-impl.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/genfiles.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/private/private.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nbproject/project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gcuBake/GUIGCUBake.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gcuBake/GUIGCUBake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gcuBake/.Chef.java.swp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/.Chef.java.swp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gcuBake/.Customer.java.swp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/.Customer.java.swp" afterDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/pom.xml" beforeDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/.Chef.java.swp" beforeDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/.Customer.java.swp" beforeDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/Chef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/Chef.java" afterDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/Customer.java" afterDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/GCULessons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/GCULessons.java" afterDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/GCUuser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/GCUuser.java" afterDir="false" />
+      <change beforePath="$USER_HOME$/GCUBake/mavenproject1/src/main/java/run.java" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+  </component>
+  <component name="ProjectId" id="1YFZd0P4RJJ3ik3fNrz9djMPUjF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9add7ffc-3869-4efc-9144-040ed1d82815" name="Default Changelist" comment="" />
+      <created>1582540385992</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582540385992</updated>
+      <workItem from="1582540387415" duration="62000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

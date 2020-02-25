@@ -1,3 +1,4 @@
+
 /*
  * This class will handle the users and who has permission for certain functuon 
  */
@@ -123,7 +124,11 @@ public void logIn()
         }
 
 public void Register()
+
 {
+    //add database connection here
+
+    /*String
         
         }
 
