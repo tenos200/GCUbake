@@ -1,3 +1,4 @@
+
 /*
  * This class will handle the users and who has permission for certain functuon 
  */
@@ -6,7 +7,7 @@
  *
  * @author timenos , aadamrazak
  */
-public class GCUuser {
+public class GCUuser{
     
     //Variables
     private String title;
@@ -29,13 +30,19 @@ public class GCUuser {
         return firstName;
     }
 
+
+}
+
     public String getLastName() {
+        
         return lastName;
     }
 
     public int getContactNo() {
+        
         return contactNo;
     }
+
 
     public String getUsername() {
         return username;
@@ -49,6 +56,7 @@ public class GCUuser {
         return gcuRole;
     }
 //Setters**Check if you need all of them or some of them
+    
     public void setTitle(String title) {
         this.title = title;
     }
@@ -89,7 +97,9 @@ public class GCUuser {
     
 //Default Contructor
     GCUuser()
-    {}
+    {
+        
+        }
     
 //overloaded Contructor
     
@@ -103,12 +113,18 @@ public class GCUuser {
         this.gcuRole = pGcuRole;
     }
     
+
+public GCUuser(){
+
     
 //Methods
 public void logIn()
-{}
+{
+        
+        }
 
 public void Register()
+<<<<<<< HEAD
 {}
 //   public void insertProduct(Product pProduct) {//need to change at the end of project
 //
@@ -132,12 +148,79 @@ public void Register()
 //            System.out.println("SQL exception occured\n" + ex);
 //        }
 //    }
+=======
+>>>>>>> 1a93a8a4123bf38afc5d89d89df86136ca59475e
 
+{
+    //add database connection here
+
+    /*String
+        
+        }
+
+
+}
+
+private void register(){
+
+
+
+}
+
+private gcuRole(){
+
+
+
+	return role;
+}
+=======
 public void DeleteUser()
-{}
+{
+
+}
 
 
+private void setFirstname(){
+
+
+}
+
+private void setLastname(){
+
+
+
+
+
+}
   
+private void setContactno(){
+
+
+}
     
+
+
+
+private void setTitle(){
+
+
+}
+
+
+private void setUsername(){
+
+
+}
+private void loginUser(){
+
+
+
+}
+
 }//end of class
+
+
+
+}
+
 
