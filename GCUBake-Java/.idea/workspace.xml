@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9add7ffc-3869-4efc-9144-040ed1d82815" name="Default Changelist" comment="" />
+    <list default="true" id="b4fe9a07-1083-4391-8266-95a2dd577150" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/gcuBake/GUIGCUBake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gcuBake/GUIGCUBake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gcuBake/GUIGCUBake.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

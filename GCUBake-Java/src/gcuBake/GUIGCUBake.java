@@ -5,6 +5,11 @@
  */
 package gcuBake;
 
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Admin
@@ -30,6 +35,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jButton1.setText("jButton1");
 
@@ -52,6 +62,27 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        checkLogin();
+    }//GEN-LAST:event_formWindowOpened
+
+
+    //Method placed here
+
+    public void checkLogin()
+    {   //programatically create the labels and texfields for the optionpane
+        JLabel label_login = new JLabel("Username:");
+        JTextField login = new JTextField();
+        JLabel label_password = new JLabel("Password:");
+        JPasswordField password = new JPasswordField();
+        //-----------------------------------------------------
+        // store these in an object array
+        Object[] login_GUI_Elelemnts = {label_login, login, label_password, password};
+        //-----------------------------------------------------
+        int userInteraction = JOptionPane.showConfirmDialog(null, login_GUI_Elelemnts, "Login",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE);}
 
     /**
      * @param args the command line arguments
