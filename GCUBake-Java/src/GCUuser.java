@@ -30,9 +30,6 @@ public class GCUuser{
         return firstName;
     }
 
-
-}
-
     public String getLastName() {
         
         return lastName;
@@ -85,21 +82,11 @@ public class GCUuser{
         this.gcuRole = gcuRole;
     }
     
-    
-    //Not need this only for run class
-//    public static void main(String[]args){
-//        
-//
-//
-//
-//}
-    
+     
     
 //Default Contructor
     GCUuser()
-    {
-        
-        }
+    {}
     
 //overloaded Contructor
     
@@ -112,114 +99,28 @@ public class GCUuser{
         this.username = pUsername;
         this.passCode = pPassCode;
         this.gcuRole = pGcuRole;
-    }
-    
-
-public GCUuser(){
-
+}
+ 
     
 //Methods
-public void logIn()
-{
-        
-        }
+public void logInUser()
+{}
 
 public void Register()
-
 {}
-//   public void insertProduct(Product pProduct) {//need to change at the end of project
-//
-//        try {
-//            Connection con = DB_Utils.getConnection();
-//            Statement stmt = con.createStatement();
-//            pProduct.getProduct();
-//
-//            String mySql = "INSERT INTO Users";
-//            mySql = mySql + ("(FirstName  , LastName , Passcode , Role, UserName)");
-//            mySql = mySql + ("VALUES (");
-//            mySql = mySql + ("'" + pProduct.getProduct() + "',");
-//            mySql = mySql + ("'" + pProduct.getPrice() + "',");
-//
-//            mySql = mySql + (")");
-//            System.out.println("the sql  - " + mySql);
-//            stmt.executeUpdate(mySql);
-//
-//        } catch (SQLException ex) {
-//            System.out.println("checkUserIsValid : Error");
-//            System.out.println("SQL exception occured\n" + ex);
-//        }
-//    }
-
-{
-    //add database connection here
-
-    //*String
-        
-        }
 
 
-}
-
-private void register(){
-
-
-
-}
-
-private gcuRole(){
-
-
-
-	return role;
-}
-=======
 public void DeleteUser()
 {
 
 }
 
 
-private void setFirstname(){
-
-
-}
-
-private void setLastname(){
-
-
-
-
-
-}
-  
-private void setContactno(){
-
-
-}
-    
-
-
-
-private void setTitle(){
-
-
-}
-
-
-private void setUsername(){
-
-
-}
-private void loginUser(){
-
-
-
-}
 
 }//end of class
 
 
 
-}
+
 
 
