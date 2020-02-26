@@ -103,7 +103,8 @@ public class GCUuser{
     
 //overloaded Contructor
     
-    public GCUuser(String pTitle, String pFirstName, String pLastName, int pContactNo, String pUsername, int pPassCode, String pGcuRole) {
+    public GCUuser(String pTitle, String pFirstName, String pLastName, int pContactNo, String pUsername, int pPassCode, String pGcuRole) 
+{
         this.title = pTitle;
         this.firstName = pFirstName;
         this.lastName = pLastName;
@@ -124,7 +125,7 @@ public void logIn()
         }
 
 public void Register()
-<<<<<<< HEAD
+
 {}
 //   public void insertProduct(Product pProduct) {//need to change at the end of project
 //
@@ -148,13 +149,11 @@ public void Register()
 //            System.out.println("SQL exception occured\n" + ex);
 //        }
 //    }
-=======
->>>>>>> 1a93a8a4123bf38afc5d89d89df86136ca59475e
 
 {
     //add database connection here
 
-    /*String
+    //*String
         
         }
 
