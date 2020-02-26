@@ -53,6 +53,28 @@ public class GUIGCUBake extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Enter Methods here
+
+    public void checklogin()
+    {
+        //programatically create the labels and texfields for the optionpane
+        JLabel label_login = new JLabel("Username:");
+        JTextField login = new JTextField();
+        JLabel label_password = new JLabel("Password:");
+        JPasswordField password = new JPasswordField();
+        //-----------------------------------------------------
+        // store these in an object array
+        Object[] login_GUI_Elelemnts = {label_login, login, label_password, password};
+        //-----------------------------------------------------
+        int userInteraction = JOptionPane.showConfirmDialog(null, login_GUI_Elelemnts, "Login",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE);
+
+    }
+
+
+
+
     /**
      * @param args the command line arguments
      */
