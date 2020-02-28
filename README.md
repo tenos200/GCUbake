@@ -1,7 +1,27 @@
 # GCUbake
 
+Things to do
 
-Class
+    GUI
+    Database connection via java and mysql
+    Methods
+        Register
+        Login
+            pop up when opened
+            takes in input and places in correct variable
+            takes user to the form
+                Chef tab -view create edit delete 
+                Customer tab - view book
+                Admin tab- view create edit delete
+        
+        Book lesson
+        Create Lesson
+        Edit Lesson
+     
+
+
+
+Classes
 
     GUIGCUBake
     
@@ -20,3 +40,5 @@ Class
       type 
       name 
       status
+      
+      
