@@ -2,9 +2,10 @@
 
 Things to do
 
-    GUI
-    Database connection via java and mysql
-    Methods
+- [ ] GUI
+- [ ] Database conneciton via 
+Database connection via java and mysql
+
         Register
         Login
             pop up when opened
