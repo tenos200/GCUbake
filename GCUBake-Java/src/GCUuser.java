@@ -1,4 +1,10 @@
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+
 /*
  * This class will handle the users and who has permission for certain functuon 
  */
@@ -15,7 +21,7 @@ public class GCUuser{
     private String lastName;
     private int contactNo;
     
-    
+    private String ID; 
     private String username;
     private int passCode;
     private String gcuRole;
@@ -38,6 +44,10 @@ public class GCUuser{
     public int getContactNo() {
         
         return contactNo;
+    }
+
+    public String getID() {
+        return ID;
     }
 
 
@@ -70,6 +80,10 @@ public class GCUuser{
         this.contactNo = contactNo;
     }
 
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
@@ -90,30 +104,20 @@ public class GCUuser{
     
 //overloaded Contructor
     
-    public GCUuser(String pTitle, String pFirstName, String pLastName, int pContactNo, String pUsername, int pPassCode, String pGcuRole) 
+    public GCUuser(String pTitle, String pFirstName, String pLastName, int pContactNo, String pUsername, int pPassCode, String pGcuRole, String pID) 
 {
         this.title = pTitle;
         this.firstName = pFirstName;
         this.lastName = pLastName;
         this.contactNo = pContactNo;
+        this.ID=pID;
         this.username = pUsername;
         this.passCode = pPassCode;
         this.gcuRole = pGcuRole;
 }
  
     
-//Methods
-public void logInUser()
-{}
-
-public void Register()
-{}
-
-
-public void DeleteUser()
-{
-
-}
+//Methods moved to GCUUser_Data_Handler
 
 
 
