@@ -10,6 +10,7 @@
 public class GCUuser{
     
     //Variables
+    private String John;
     private String title;
     private String firstName;
     private String lastName;
@@ -112,7 +113,6 @@ private void Register()
 			*/
 
         try{
-
             //create my mysql database connection
 
             String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
@@ -137,6 +137,7 @@ private void Register()
             preparedStmt.execute();
 
             myConnection.close();
+
 
         }
         catch (Exception e){
