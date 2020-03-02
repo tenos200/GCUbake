@@ -110,7 +110,7 @@ public void logInUser()
 private void Register()
 {
 	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
-			*/
+			
 
         try{
             //create my mysql database connection
@@ -146,7 +146,7 @@ private void Register()
             System.err.println(e.getMessage());
 
 
-        }
+        }*/
 
 
 
