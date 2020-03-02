@@ -91,9 +91,9 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //test registering
-        register();
+        //register();
         
-        //checklogin();
+        checklogin();
     }//GEN-LAST:event_formWindowOpened
 
     // Methods here
@@ -177,20 +177,31 @@ public void userDisplay(){
 
     }
     
+    /*
+    Notes for Register
+    
+    Register- fill out the textbox and taken to the login page
+        already a member; where they will taken to the login form
+    */
     public void register()
     {
         //programatically create the labels and texfields for the optionpane
         
-        JLabel lebel_message = new JLabel("Please enter your details to register");
+        JLabel label_message = new JLabel("Please enter your details to register");
+        
         JLabel label_login = new JLabel("Username:");
         JTextField login = new JTextField();
         
-        
 //-----------------------------------------------------
         // store these in an object array
-        Object[] login_GUI_Elelemnts = {label_login, login};
-        //-----------------------------------------------------
-        int userInteraction = JOptionPane.showConfirmDialog(null, login_GUI_Elelemnts, "Register",
+        Object[] Register_GUI_Elelemnts = {label_login, login};
+        /*-----------------------------------------------------buttons of the register page -
+        Register- fill out the textbox and taken to the login page
+        already a member; where they will taken to the login form
+        
+        
+        */
+        int userInteraction = JOptionPane.showConfirmDialog(null, Register_GUI_Elelemnts, "Register",
                 JOptionPane.OK_CANCEL_OPTION,
                 JOptionPane.PLAIN_MESSAGE);
         
