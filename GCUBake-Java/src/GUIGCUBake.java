@@ -90,18 +90,21 @@ public class GUIGCUBake extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        checklogin();//not fully ready
+        //test registering
+        register();
+        
+        //checklogin();
     }//GEN-LAST:event_formWindowOpened
 
     // Methods here
     
     
-public void RoleDisplay(){
+public void userDisplay(){
         GCUUser_Data_Handler myCheckAccount = new GCUUser_Data_Handler();
             myCheckAccount.checkUserIsValid(theUser);
 
             if (myCheckAccount.checkUserIsValid(theUser)){
-                lblUserView.setText( theUser.getGcuRole());
+                lblUserView.setText( theUser.getUsername());
             }
     }
     public void checklogin()
@@ -172,6 +175,26 @@ public void RoleDisplay(){
             System.exit(0);
         }
 
+    }
+    
+    public void register()
+    {
+        //programatically create the labels and texfields for the optionpane
+        
+        JLabel lebel_message = new JLabel("Please enter your details to register");
+        JLabel label_login = new JLabel("Username:");
+        JTextField login = new JTextField();
+        
+        
+//-----------------------------------------------------
+        // store these in an object array
+        Object[] login_GUI_Elelemnts = {label_login, login};
+        //-----------------------------------------------------
+        int userInteraction = JOptionPane.showConfirmDialog(null, login_GUI_Elelemnts, "Register",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE);
+        
+    
     }
 
 
