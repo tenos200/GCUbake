@@ -72,48 +72,47 @@ public class GCUUser_Data_Handler {
     
     //Other methods
     
-//private void Register()
-//{
-//	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
-//			*/
-//
-//        try{
-//            //create my mysql database connection
-//
-//            String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
-//            String username = "root";
-//            String password = "";
-//            // get a connection(Step 1)
-//            Connection myConnection = DriverManager.getConnection(mysqlUrl,username,password);
-//            //Create a statement(Step 2)
-//            Statement myStatement = myConnection.createStatement();
-//
-//            //execute query(step 3)
-//            String query = "insert into Customer (title, firstname, lastname, contactNo, username, passcode, gcuRole)" + "values (?, ?, ?, ?, ?, ?, ?)";
-//
-//            PreparedStatement preparedStmt = myConnection.prepareStatement(query);
-//            preparedStmt.setString(1,pTitle);
-//            preparedStmt.setString(2,pFirstName);
-//            preparedStmt.setString(3,pLastName);
-//            preparedStmt.setInt(4,pContactNo);
-//            preparedStmt.setInt(5,pUsername);
-//            preparedStmt.setInt(6,pPassCode);
-//            preparedStmt.setInt(7,pGcuRole);
-//            preparedStmt.execute();
-//
-//            myConnection.close();
-//
-//
-//        }
-//        catch (Exception e){
-//
-//            System.err.println("Got an exception");
-//            System.err.println(e.getMessage());
-//
-//
-//        }
-//
-//}
+private void Register(GCUuser pUser)
+{
+	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
+			*/
+
+        try{
+            //create my mysql database connection
+
+            Connection con = DB_Utils.getConnection();
+            Statement stmt = con.createStatement();
+            // get a connection(Step 1)
+            
+            //Create a statement(Step 2)
+            
+            String customerDefault = "defautl Customer";
+
+            //execute query(step 3)
+            String query = "INSERT INTO user (Title, firstname, lastname, username, passcode, role)" + "VALUES (?, ?, ?, ?, ?, ?)";
+
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setString(1,pUser.getTitle());
+            preparedStmt.setString(2,pUser.getFirstName());
+            preparedStmt.setString(3,pUser.getLastName());
+            preparedStmt.setInt(4,pUser.getContactNo());
+            preparedStmt.setString(5,pUser.getUsername());
+            preparedStmt.setInt(6,pUser.getPassCode());
+            preparedStmt.setString(6,customerDefault);
+            preparedStmt.execute();
+            con.close();
+
+
+        }
+        catch (Exception e){
+
+            System.err.println("Got an exception");
+          System.err.println(e.getMessage());
+
+
+        }
+
+}
 
 public void DeleteUser()
 {
