@@ -20,6 +20,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
     //Global variables
     
     GCUuser theUser; 
+    GCUUser_Data_Handler UserHandler;
 
     /**
      * Creates new form GUIGCUBake
@@ -91,10 +92,12 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //test registering
+        //UserHandler.Register(theUser.test);
         
+        //register();
+        checklogin();
+        userDisplay();
         
-        register();
-        //checklogin();
     }//GEN-LAST:event_formWindowOpened
 
     // Methods here

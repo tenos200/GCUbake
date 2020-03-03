@@ -72,7 +72,7 @@ public class GCUUser_Data_Handler {
     
     //Other methods
     
-private void Register(GCUuser test)
+public void Register(GCUuser test)
 {
 	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
 			*/
