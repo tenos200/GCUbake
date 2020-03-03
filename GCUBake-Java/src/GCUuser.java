@@ -1,4 +1,4 @@
-
+ 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -26,6 +26,12 @@ public class GCUuser{
     private int passCode;
     private String gcuRole;
 
+    
+    GCUuser test = new GCUuser("Mr", "Aadam", "Razak", "testtest", 123, "CUSOMTER");
+    public GCUuser(String title, String firstName, String lastName, String userName, int passCode,String gcuRole){
+    
+    }
+    
     
     //Getters
     public String getTitle() {
@@ -116,11 +122,6 @@ public class GCUuser{
         this.gcuRole = pGcuRole;
 }
  
-    
-//Methods moved to GCUUser_Data_Handler
-
-
-
 }//end of class
 
 

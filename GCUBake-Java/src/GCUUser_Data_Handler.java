@@ -72,7 +72,7 @@ public class GCUUser_Data_Handler {
     
     //Other methods
     
-private void Register(GCUuser pUser)
+public void Register(GCUuser test)
 {
 	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
 			*/
@@ -92,12 +92,12 @@ private void Register(GCUuser pUser)
             String query = "INSERT INTO user (Title, firstname, lastname, username, passcode, role)" + "VALUES (?, ?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString(1,pUser.getTitle());
-            preparedStmt.setString(2,pUser.getFirstName());
-            preparedStmt.setString(3,pUser.getLastName());
-            preparedStmt.setInt(4,pUser.getContactNo());
-            preparedStmt.setString(5,pUser.getUsername());
-            preparedStmt.setInt(6,pUser.getPassCode());
+            preparedStmt.setString(1,test.getTitle());
+            preparedStmt.setString(2,test.getFirstName());
+            preparedStmt.setString(3,test.getLastName());
+            preparedStmt.setInt(4,test.getContactNo());
+            preparedStmt.setString(5,test.getUsername());
+            preparedStmt.setInt(6,test.getPassCode());
             preparedStmt.setString(6,customerDefault);
             preparedStmt.execute();
             con.close();
