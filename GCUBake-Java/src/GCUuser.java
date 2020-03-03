@@ -27,6 +27,13 @@ public class GCUuser{
     private String gcuRole;
 
     
+    GCUuser test = new GCUuser("Mr", "Aadam", "Razak", "testtest", 123, "CUSOMTER");
+    public GCUuser(String title, String firstName, String lastName, String userName, int passCode,String gcuRole){
+    
+    
+    
+    
+    }
     //Getters
     public String getTitle() {
         return title;

@@ -91,8 +91,9 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //test registering
-        register();
         
+        
+        register();
         //checklogin();
     }//GEN-LAST:event_formWindowOpened
 
