@@ -38,12 +38,49 @@ public class GUIGCUBake extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        tabbedGCUBake = new javax.swing.JTabbedPane();
-        pnlView = new javax.swing.JTabbedPane();
-        pnlBook = new javax.swing.JTabbedPane();
-        pnlCreate = new javax.swing.JTabbedPane();
-        pnlEdit = new javax.swing.JTabbedPane();
-        pnlDelete = new javax.swing.JTabbedPane();
+        TabbedGCUBake = new javax.swing.JTabbedPane();
+        pnlView = new javax.swing.JPanel();
+        lblViewMessage = new javax.swing.JLabel();
+        ComboView = new javax.swing.JComboBox();
+        lblVLessonName = new javax.swing.JLabel();
+        lblVName = new javax.swing.JLabel();
+        lblVType = new javax.swing.JLabel();
+        lblVStatus = new javax.swing.JLabel();
+        txtVLessonID = new javax.swing.JTextField();
+        txtVName = new javax.swing.JTextField();
+        txtVType = new javax.swing.JTextField();
+        txtVStatus = new javax.swing.JTextField();
+        pnlBook = new javax.swing.JPanel();
+        lblBookMessage = new javax.swing.JLabel();
+        comboBook = new javax.swing.JComboBox();
+        btnBook = new javax.swing.JButton();
+        lblBookingConfirmation = new javax.swing.JLabel();
+        pnlCreate = new javax.swing.JPanel();
+        lblCName = new javax.swing.JLabel();
+        lblCLessonID = new javax.swing.JLabel();
+        txtCType = new javax.swing.JTextField();
+        txtCLessonID = new javax.swing.JTextField();
+        lblCStatus = new javax.swing.JLabel();
+        txtCStatus = new javax.swing.JTextField();
+        lblCType = new javax.swing.JLabel();
+        txtCName = new javax.swing.JTextField();
+        lblCreateMessage = new javax.swing.JLabel();
+        pnlEdit = new javax.swing.JPanel();
+        lblEditMessage = new javax.swing.JLabel();
+        ComboCreate = new javax.swing.JComboBox();
+        lblELessonName = new javax.swing.JLabel();
+        lblEName = new javax.swing.JLabel();
+        lblEType = new javax.swing.JLabel();
+        lblEStatus = new javax.swing.JLabel();
+        txtELessonID = new javax.swing.JTextField();
+        txtEName = new javax.swing.JTextField();
+        txtEType = new javax.swing.JTextField();
+        txtEStatus = new javax.swing.JTextField();
+        pnlDelete = new javax.swing.JPanel();
+        lblDeleteMessage = new javax.swing.JLabel();
+        comboDelete = new javax.swing.JComboBox();
+        btnDelete = new javax.swing.JButton();
+        lblDeleteConfirmation = new javax.swing.JLabel();
         lblUserView = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,11 +91,281 @@ public class GUIGCUBake extends javax.swing.JFrame {
             }
         });
 
-        tabbedGCUBake.addTab("View Lesson", pnlView);
-        tabbedGCUBake.addTab("Book Lesson", pnlBook);
-        tabbedGCUBake.addTab("Create Lesson", pnlCreate);
-        tabbedGCUBake.addTab("Edit Lesson", pnlEdit);
-        tabbedGCUBake.addTab("Delete Lesson", pnlDelete);
+        pnlView.setName(""); // NOI18N
+        pnlView.setRequestFocusEnabled(false);
+
+        lblViewMessage.setText("Please select a lesson");
+
+        lblVLessonName.setText("Lesson ID");
+
+        lblVName.setText("Name");
+
+        lblVType.setText("Type");
+
+        lblVStatus.setText("Status");
+
+        txtVStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtVStatusActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlViewLayout = new javax.swing.GroupLayout(pnlView);
+        pnlView.setLayout(pnlViewLayout);
+        pnlViewLayout.setHorizontalGroup(
+            pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlViewLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlViewLayout.createSequentialGroup()
+                        .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblVLessonName)
+                            .addComponent(lblVName)
+                            .addComponent(lblVType)
+                            .addComponent(lblVStatus))
+                        .addGap(64, 64, 64)
+                        .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtVStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVType, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtVLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(ComboView, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblViewMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
+        pnlViewLayout.setVerticalGroup(
+            pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlViewLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(lblViewMessage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ComboView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVLessonName)
+                    .addComponent(txtVLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVName)
+                    .addComponent(txtVName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVType)
+                    .addComponent(txtVType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblVStatus)
+                    .addComponent(txtVStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        lblViewMessage.getAccessibleContext().setAccessibleName("view page");
+
+        TabbedGCUBake.addTab("View Lesson", pnlView);
+
+        lblBookMessage.setText("Please select which lesson you wish to book");
+
+        btnBook.setText("Book Lesson");
+
+        javax.swing.GroupLayout pnlBookLayout = new javax.swing.GroupLayout(pnlBook);
+        pnlBook.setLayout(pnlBookLayout);
+        pnlBookLayout.setHorizontalGroup(
+            pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBookLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblBookMessage)
+                    .addComponent(comboBook, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlBookLayout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblBookingConfirmation)
+                            .addComponent(btnBook))))
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+        pnlBookLayout.setVerticalGroup(
+            pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlBookLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(lblBookMessage)
+                .addGap(18, 18, 18)
+                .addComponent(comboBook, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addComponent(btnBook)
+                .addGap(56, 56, 56)
+                .addComponent(lblBookingConfirmation)
+                .addContainerGap(76, Short.MAX_VALUE))
+        );
+
+        TabbedGCUBake.addTab("Book Lesson", pnlBook);
+
+        lblCName.setText("Name");
+
+        lblCLessonID.setText("Lesson ID");
+
+        lblCStatus.setText("Status");
+
+        lblCType.setText("Type");
+
+        lblCreateMessage.setText("Enter Lesson Details");
+
+        javax.swing.GroupLayout pnlCreateLayout = new javax.swing.GroupLayout(pnlCreate);
+        pnlCreate.setLayout(pnlCreateLayout);
+        pnlCreateLayout.setHorizontalGroup(
+            pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlCreateLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCreateMessage)
+                    .addGroup(pnlCreateLayout.createSequentialGroup()
+                        .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblCLessonID)
+                            .addComponent(lblCName)
+                            .addComponent(lblCType)
+                            .addComponent(lblCStatus))
+                        .addGap(64, 64, 64)
+                        .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCType, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(231, Short.MAX_VALUE))
+        );
+        pnlCreateLayout.setVerticalGroup(
+            pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblCreateMessage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCLessonID)
+                    .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCName)
+                    .addComponent(txtCName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCType)
+                    .addComponent(txtCType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCStatus)
+                    .addComponent(txtCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(73, 73, 73))
+        );
+
+        TabbedGCUBake.addTab("Create Lesson", pnlCreate);
+
+        lblEditMessage.setText("Please select Lesson ID");
+
+        lblELessonName.setText("Lesson ID");
+
+        lblEName.setText("Name");
+
+        lblEType.setText("Type");
+
+        lblEStatus.setText("Status");
+
+        txtEStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEStatusActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlEditLayout = new javax.swing.GroupLayout(pnlEdit);
+        pnlEdit.setLayout(pnlEditLayout);
+        pnlEditLayout.setHorizontalGroup(
+            pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEditLayout.createSequentialGroup()
+                        .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblELessonName)
+                            .addComponent(lblEName)
+                            .addComponent(lblEType)
+                            .addComponent(lblEStatus))
+                        .addGap(64, 64, 64)
+                        .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEType, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtELessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(ComboCreate, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblEditMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(243, Short.MAX_VALUE))
+        );
+        pnlEditLayout.setVerticalGroup(
+            pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlEditLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(lblEditMessage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ComboCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblELessonName)
+                    .addComponent(txtELessonID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEName)
+                    .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEType)
+                    .addComponent(txtEType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblEStatus)
+                    .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        TabbedGCUBake.addTab("Edit Lesson", pnlEdit);
+
+        lblDeleteMessage.setText("Please select which lesson to cancel");
+
+        btnDelete.setText("Cancel Lesson");
+
+        javax.swing.GroupLayout pnlDeleteLayout = new javax.swing.GroupLayout(pnlDelete);
+        pnlDelete.setLayout(pnlDeleteLayout);
+        pnlDeleteLayout.setHorizontalGroup(
+            pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDeleteLayout.createSequentialGroup()
+                .addGroup(pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlDeleteLayout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addGroup(pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDeleteMessage)
+                            .addGroup(pnlDeleteLayout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(comboDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(pnlDeleteLayout.createSequentialGroup()
+                        .addGap(137, 137, 137)
+                        .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlDeleteLayout.createSequentialGroup()
+                        .addGap(197, 197, 197)
+                        .addComponent(lblDeleteConfirmation)))
+                .addContainerGap(157, Short.MAX_VALUE))
+        );
+        pnlDeleteLayout.setVerticalGroup(
+            pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlDeleteLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(lblDeleteMessage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(comboDelete, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(lblDeleteConfirmation)
+                .addContainerGap(82, Short.MAX_VALUE))
+        );
+
+        TabbedGCUBake.addTab("Delete Lesson", pnlDelete);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,24 +374,24 @@ public class GUIGCUBake extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(tabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblUserView)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addComponent(lblUserView))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(lblUserView)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(tabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(74, 74, 74))
+                .addGap(54, 54, 54)
+                .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        tabbedGCUBake.getAccessibleContext().setAccessibleName("View Lesson");
+        TabbedGCUBake.getAccessibleContext().setAccessibleName("View Lesson");
 
         pack();
         setLocationRelativeTo(null);
@@ -99,6 +406,14 @@ public class GUIGCUBake extends javax.swing.JFrame {
         userDisplay();
         
     }//GEN-LAST:event_formWindowOpened
+
+    private void txtVStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVStatusActionPerformed
+
+    private void txtEStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEStatusActionPerformed
 
     // Methods here
     
@@ -153,9 +468,9 @@ public void userDisplay(){
                 JOptionPane.showMessageDialog(this, "Logged in as Customer \nAll Chef and Admin panels will be removed");
                 
                 //If an ordinary user logged in then remove the panel tabs that relate to administrators.
-                this.tabbedGCUBake.remove(pnlCreate); //removes the create tab
-                this.tabbedGCUBake.remove(pnlEdit); //removes the edit tab
-                this.tabbedGCUBake.remove(pnlDelete);// removes the delete tab
+                this.TabbedGCUBake.remove(pnlCreate); //removes the create tab
+                this.TabbedGCUBake.remove(pnlEdit); //removes the edit tab
+                this.TabbedGCUBake.remove(pnlDelete);// removes the delete tab
                 
                 entryGranted = true;
                 
@@ -251,12 +566,49 @@ public void userDisplay(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox ComboCreate;
+    private javax.swing.JComboBox ComboView;
+    private javax.swing.JTabbedPane TabbedGCUBake;
+    private javax.swing.JButton btnBook;
+    private javax.swing.JButton btnDelete;
+    private javax.swing.JComboBox comboBook;
+    private javax.swing.JComboBox comboDelete;
+    private javax.swing.JLabel lblBookMessage;
+    private javax.swing.JLabel lblBookingConfirmation;
+    private javax.swing.JLabel lblCLessonID;
+    private javax.swing.JLabel lblCName;
+    private javax.swing.JLabel lblCStatus;
+    private javax.swing.JLabel lblCType;
+    private javax.swing.JLabel lblCreateMessage;
+    private javax.swing.JLabel lblDeleteConfirmation;
+    private javax.swing.JLabel lblDeleteMessage;
+    private javax.swing.JLabel lblELessonName;
+    private javax.swing.JLabel lblEName;
+    private javax.swing.JLabel lblEStatus;
+    private javax.swing.JLabel lblEType;
+    private javax.swing.JLabel lblEditMessage;
     private javax.swing.JLabel lblUserView;
-    private javax.swing.JTabbedPane pnlBook;
-    private javax.swing.JTabbedPane pnlCreate;
-    private javax.swing.JTabbedPane pnlDelete;
-    private javax.swing.JTabbedPane pnlEdit;
-    private javax.swing.JTabbedPane pnlView;
-    private javax.swing.JTabbedPane tabbedGCUBake;
+    private javax.swing.JLabel lblVLessonName;
+    private javax.swing.JLabel lblVName;
+    private javax.swing.JLabel lblVStatus;
+    private javax.swing.JLabel lblVType;
+    private javax.swing.JLabel lblViewMessage;
+    private javax.swing.JPanel pnlBook;
+    private javax.swing.JPanel pnlCreate;
+    private javax.swing.JPanel pnlDelete;
+    private javax.swing.JPanel pnlEdit;
+    private javax.swing.JPanel pnlView;
+    private javax.swing.JTextField txtCLessonID;
+    private javax.swing.JTextField txtCName;
+    private javax.swing.JTextField txtCStatus;
+    private javax.swing.JTextField txtCType;
+    private javax.swing.JTextField txtELessonID;
+    private javax.swing.JTextField txtEName;
+    private javax.swing.JTextField txtEStatus;
+    private javax.swing.JTextField txtEType;
+    private javax.swing.JTextField txtVLessonID;
+    private javax.swing.JTextField txtVName;
+    private javax.swing.JTextField txtVStatus;
+    private javax.swing.JTextField txtVType;
     // End of variables declaration//GEN-END:variables
 }

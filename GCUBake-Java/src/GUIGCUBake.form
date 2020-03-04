@@ -29,16 +29,16 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="tabbedGCUBake" min="-2" pref="485" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="lblUserView" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="TabbedGCUBake" min="-2" pref="485" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="89" max="32767" attributes="0"/>
+              <EmptySpace pref="106" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,22 +47,26 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Component id="lblUserView" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="81" max="32767" attributes="0"/>
-              <Component id="tabbedGCUBake" min="-2" pref="293" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Component id="TabbedGCUBake" min="-2" pref="330" max="-2" attributes="0"/>
+              <EmptySpace pref="64" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="tabbedGCUBake">
+    <Container class="javax.swing.JTabbedPane" name="TabbedGCUBake">
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="View Lesson"/>
       </AccessibilityProperties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JTabbedPane" name="pnlView">
+        <Container class="javax.swing.JPanel" name="pnlView">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="" noResource="true"/>
+            <Property name="requestFocusEnabled" type="boolean" value="false"/>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="View Lesson">
@@ -71,9 +75,118 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblVLessonName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVType" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblVStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtVStatus" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtVType" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtVName" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtVLessonID" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="ComboView" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblViewMessage" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="243" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="lblViewMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="ComboView" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVLessonName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVLessonID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVType" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVType" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblVStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtVStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblViewMessage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Please select a lesson"/>
+              </Properties>
+              <AccessibilityProperties>
+                <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="view page"/>
+              </AccessibilityProperties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="ComboView">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVLessonName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lesson ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVType">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Type"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblVStatus">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Status"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVLessonID">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVName">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVType">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtVStatus">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtVStatusActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
-        <Container class="javax.swing.JTabbedPane" name="pnlBook">
+        <Container class="javax.swing.JPanel" name="pnlBook">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Book Lesson">
@@ -82,9 +195,65 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblBookMessage" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboBook" min="-2" pref="125" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblBookingConfirmation" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnBook" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="206" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="lblBookMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="comboBook" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="btnBook" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                      <Component id="lblBookingConfirmation" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="76" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblBookMessage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Please select which lesson you wish to book"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="comboBook">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnBook">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Book Lesson"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblBookingConfirmation">
+            </Component>
+          </SubComponents>
         </Container>
-        <Container class="javax.swing.JTabbedPane" name="pnlCreate">
+        <Container class="javax.swing.JPanel" name="pnlCreate">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Create Lesson">
@@ -93,9 +262,100 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblCreateMessage" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblCLessonID" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCType" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblCStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtCStatus" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtCType" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtCName" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtCLessonID" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="231" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Component id="lblCreateMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="48" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblCLessonID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCLessonID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblCName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblCType" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCType" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblCStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblCName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCLessonID">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lesson ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCType">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCLessonID">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCStatus">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Status"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCStatus">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCType">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Type"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtCName">
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblCreateMessage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Enter Lesson Details"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
-        <Container class="javax.swing.JTabbedPane" name="pnlEdit">
+        <Container class="javax.swing.JPanel" name="pnlEdit">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Edit Lesson">
@@ -104,9 +364,115 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblELessonName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEName" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEType" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblEStatus" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtEStatus" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtEType" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtEName" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="txtELessonID" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="ComboCreate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblEditMessage" alignment="1" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="243" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="lblEditMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="ComboCreate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblELessonName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtELessonID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEName" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEName" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEType" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEType" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lblEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblEditMessage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Please select Lesson ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="ComboCreate">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblELessonName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Lesson ID"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEName">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Name"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEType">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Type"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblEStatus">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Status"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtELessonID">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEName">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEType">
+            </Component>
+            <Component class="javax.swing.JTextField" name="txtEStatus">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEStatusActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
-        <Container class="javax.swing.JTabbedPane" name="pnlDelete">
+        <Container class="javax.swing.JPanel" name="pnlDelete">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Delete Lesson">
@@ -115,7 +481,71 @@
             </Constraint>
           </Constraints>
 
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblDeleteMessage" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                      <Component id="comboDelete" min="-2" pref="125" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
+                              <Component id="btnDelete" min="-2" pref="155" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
+                              <Component id="lblDeleteConfirmation" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="157" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="lblDeleteMessage" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="comboDelete" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnDelete" min="-2" pref="46" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="lblDeleteConfirmation" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="82" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblDeleteMessage">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Please select which lesson to cancel"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="comboDelete">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnDelete">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Cancel Lesson"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblDeleteConfirmation">
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
