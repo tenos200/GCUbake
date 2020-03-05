@@ -152,6 +152,9 @@
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboViewActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblVLessonName">
               <Properties>
@@ -248,6 +251,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Book Lesson"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBookActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblBookingConfirmation">
             </Component>
@@ -282,10 +288,11 @@
                                   <Component id="txtCType" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Component id="txtCName" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Component id="txtCLessonID" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="btnCreate" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="231" max="32767" attributes="0"/>
+                      <EmptySpace pref="208" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -314,7 +321,9 @@
                           <Component id="lblCStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtCStatus" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="btnCreate" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -353,6 +362,14 @@
                 <Property name="text" type="java.lang.String" value="Enter Lesson Details"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="btnCreate">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Create Lesson"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCreateActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlEdit">
@@ -379,18 +396,22 @@
                               </Group>
                               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtEStatus" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="txtEStatus" min="-2" pref="90" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                      <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                                   <Component id="txtEType" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Component id="txtEName" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                                   <Component id="txtELessonID" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="ComboCreate" alignment="0" max="32767" attributes="0"/>
+                              <Component id="ComboEdit" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblEditMessage" alignment="1" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="243" max="32767" attributes="0"/>
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -400,7 +421,7 @@
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                       <Component id="lblEditMessage" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="ComboCreate" min="-2" max="-2" attributes="0"/>
+                      <Component id="ComboEdit" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblELessonName" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -416,12 +437,21 @@
                           <Component id="lblEType" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="txtEType" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtEStatus" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="43" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -432,12 +462,15 @@
                 <Property name="text" type="java.lang.String" value="Please select Lesson ID"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="ComboCreate">
+            <Component class="javax.swing.JComboBox" name="ComboEdit">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="0"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ComboEditActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblELessonName">
               <Properties>
@@ -468,6 +501,14 @@
             <Component class="javax.swing.JTextField" name="txtEStatus">
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtEStatusActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnEdit">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Edit Lesson"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -542,6 +583,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cancel Lesson"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblDeleteConfirmation">
             </Component>

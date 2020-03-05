@@ -65,9 +65,10 @@ public class GUIGCUBake extends javax.swing.JFrame {
         lblCType = new javax.swing.JLabel();
         txtCName = new javax.swing.JTextField();
         lblCreateMessage = new javax.swing.JLabel();
+        btnCreate = new javax.swing.JButton();
         pnlEdit = new javax.swing.JPanel();
         lblEditMessage = new javax.swing.JLabel();
-        ComboCreate = new javax.swing.JComboBox();
+        ComboEdit = new javax.swing.JComboBox();
         lblELessonName = new javax.swing.JLabel();
         lblEName = new javax.swing.JLabel();
         lblEType = new javax.swing.JLabel();
@@ -76,6 +77,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
         txtEName = new javax.swing.JTextField();
         txtEType = new javax.swing.JTextField();
         txtEStatus = new javax.swing.JTextField();
+        btnEdit = new javax.swing.JButton();
         pnlDelete = new javax.swing.JPanel();
         lblDeleteMessage = new javax.swing.JLabel();
         comboDelete = new javax.swing.JComboBox();
@@ -95,6 +97,12 @@ public class GUIGCUBake extends javax.swing.JFrame {
         pnlView.setRequestFocusEnabled(false);
 
         lblViewMessage.setText("Please select a lesson");
+
+        ComboView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboViewActionPerformed(evt);
+            }
+        });
 
         lblVLessonName.setText("Lesson ID");
 
@@ -167,6 +175,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
         lblBookMessage.setText("Please select which lesson you wish to book");
 
         btnBook.setText("Book Lesson");
+        btnBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBookActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlBookLayout = new javax.swing.GroupLayout(pnlBook);
         pnlBook.setLayout(pnlBookLayout);
@@ -210,6 +223,13 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
         lblCreateMessage.setText("Enter Lesson Details");
 
+        btnCreate.setText("Create Lesson");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlCreateLayout = new javax.swing.GroupLayout(pnlCreate);
         pnlCreate.setLayout(pnlCreateLayout);
         pnlCreateLayout.setHorizontalGroup(
@@ -229,8 +249,9 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(txtCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCType, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(231, Short.MAX_VALUE))
+                            .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCreate))))
+                .addContainerGap(208, Short.MAX_VALUE))
         );
         pnlCreateLayout.setVerticalGroup(
             pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -253,12 +274,20 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCStatus)
                     .addComponent(txtCStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(73, 73, 73))
+                .addGap(26, 26, 26)
+                .addComponent(btnCreate)
+                .addGap(22, 22, 22))
         );
 
         TabbedGCUBake.addTab("Create Lesson", pnlCreate);
 
         lblEditMessage.setText("Please select Lesson ID");
+
+        ComboEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboEditActionPerformed(evt);
+            }
+        });
 
         lblELessonName.setText("Lesson ID");
 
@@ -271,6 +300,13 @@ public class GUIGCUBake extends javax.swing.JFrame {
         txtEStatus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEStatusActionPerformed(evt);
+            }
+        });
+
+        btnEdit.setText("Edit Lesson");
+        btnEdit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditActionPerformed(evt);
             }
         });
 
@@ -289,14 +325,17 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(lblEStatus))
                         .addGap(64, 64, 64)
                         .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pnlEditLayout.createSequentialGroup()
+                                .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(56, 56, 56)
+                                .addComponent(btnEdit))
                             .addComponent(txtEType, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtEName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtELessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(ComboCreate, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ComboEdit, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblEditMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         pnlEditLayout.setVerticalGroup(
             pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -304,7 +343,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addComponent(lblEditMessage)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ComboCreate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ComboEdit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblELessonName)
@@ -317,11 +356,17 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEType)
                     .addComponent(txtEType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEStatus)
-                    .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlEditLayout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEStatus)
+                            .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(43, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnEdit)
+                        .addGap(28, 28, 28))))
         );
 
         TabbedGCUBake.addTab("Edit Lesson", pnlEdit);
@@ -329,6 +374,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
         lblDeleteMessage.setText("Please select which lesson to cancel");
 
         btnDelete.setText("Cancel Lesson");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDeleteLayout = new javax.swing.GroupLayout(pnlDelete);
         pnlDelete.setLayout(pnlDeleteLayout);
@@ -414,6 +464,68 @@ public class GUIGCUBake extends javax.swing.JFrame {
     private void txtEStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEStatusActionPerformed
+
+    private void ComboViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboViewActionPerformed
+      //viewing lesson for the customer
+        
+        //get connection of database
+        
+        //display all of lesson id in the database in the  
+        
+        //when selected place all fields in the textboxes as in the GUI
+        
+        
+    }//GEN-LAST:event_ComboViewActionPerformed
+
+    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
+        //booking lesson
+        
+        //customer selects which lesson by id from the database
+        
+        //btn clicked and calls method BookLesson()
+        
+        //shows a booking confirmation in the textbox called lblBookingconfirmation 
+        //followed by which lesson was booked by the customer
+       
+    }//GEN-LAST:event_btnBookActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        
+       //collects input data from te textboxes
+        
+       //calls the method in Lesson_Data_handler to createLesson()
+        
+        //Display confirmation of lesson
+    }//GEN-LAST:event_btnCreateActionPerformed
+
+    private void ComboEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboEditActionPerformed
+        
+    }//GEN-LAST:event_ComboEditActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        //Edit lesson for the customer
+        
+        //get connection of database
+        
+        //display all of lesson id in the database in the  
+        
+        //when selected place all fields in the textboxes as in the GUI
+        
+        //call from Lesson_Data_Handler class in editLesson() method
+        
+        //Confirmation given
+        
+    }//GEN-LAST:event_btnEditActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        //place items in the comboDelete from database
+        
+        //collect selected item
+        
+        //call from Lesson_Data_Handler class in deleteLesson() method
+        
+        //confirmation given
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
     // Methods here
     
@@ -566,11 +678,13 @@ public void userDisplay(){
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox ComboCreate;
+    private javax.swing.JComboBox ComboEdit;
     private javax.swing.JComboBox ComboView;
     private javax.swing.JTabbedPane TabbedGCUBake;
     private javax.swing.JButton btnBook;
+    private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnEdit;
     private javax.swing.JComboBox comboBook;
     private javax.swing.JComboBox comboDelete;
     private javax.swing.JLabel lblBookMessage;
