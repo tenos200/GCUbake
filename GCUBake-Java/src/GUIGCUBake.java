@@ -563,10 +563,11 @@ public void userDisplay(){
             String pass = new String(password.getPassword()); //pulls the password string from textfield
             Boolean entryGranted = false;// setup boolean as false.
 
-           GCUuser  theUser = new GCUuser();
-            theUser.setUsername(user);
+            theUser = new GCUuser();
+            theUser.setUsername(user); //Error shown here
             theUser.setPassCode(Integer.parseInt(pass));
-
+            
+            
             System.out.println("The users data is now " + theUser.toString());
 
             GCUUser_Data_Handler theUsersDataHandler = new GCUUser_Data_Handler();
