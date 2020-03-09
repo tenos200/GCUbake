@@ -82,7 +82,7 @@ public void Register(GCUuser test)
             
             /*
             create my mysql database connection
-
+						use this code for conneciton
             String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake"; modify required database url for your machine
             String username = "root";
             String password = "";
