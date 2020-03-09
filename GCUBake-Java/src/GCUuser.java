@@ -90,12 +90,20 @@ public class GCUuser{
         this.ID = ID;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String pUsername) {
+        // Accessor method- these guard aginst false data being use for state.
+        if (!pUsername.equals("")) {
+          this.username = pUsername;  
+        }
+        
     }
-
-    public void setPassCode(int passCode) {
-        this.passCode = passCode;
+    
+    public void setPassCode(int pPassCode) {
+        // Accessor method- these guard aginst false data being use for state.
+        if(pPassCode > 1000){
+         this.passCode = pPassCode;   
+        }
+        
     }
 
     public void setGcuRole(String gcuRole) {

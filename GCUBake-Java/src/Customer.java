@@ -37,15 +37,6 @@ public class Customer {
     }
 
     
-    //Methods
-    public void bookLesson()
-    {}
-    
-    public void cancelLesson()
-    {}
-    
-    
-    
     
     
 }//End of class
