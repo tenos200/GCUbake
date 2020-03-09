@@ -79,7 +79,18 @@ public void Register(GCUuser test)
 
         try{
             //create my mysql database connection
-
+            
+            /*
+            create my mysql database connection
+						use this code for conneciton
+            String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake"; modify required database url for your machine
+            String username = "root";
+            String password = "";
+            
+            // get a connection(Step 1)
+            con = DriverManager.getConnection(mysqlUrl,username,password);
+            */
+            
             Connection con = DB_Utils.getConnection();
             Statement stmt = con.createStatement();
             // get a connection(Step 1)
