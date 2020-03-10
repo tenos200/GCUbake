@@ -1,8 +1,5 @@
  
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.Statement;
+
 
 
 /*
@@ -27,7 +24,7 @@ public class GCUuser{
     private String gcuRole;
 
     
-    GCUuser test = new GCUuser("Mr", "Aadam", "Razak", "testtest", 123, "CUSOMTER");
+    //GCUuser test = new GCUuser("Mr", "Aadam", "Razak", "testtest", 123, "CUSOMTER");
     public GCUuser(String title, String firstName, String lastName, String userName, int passCode,String gcuRole){
     
     }
