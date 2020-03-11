@@ -39,6 +39,22 @@ public class GUIGCUBake extends javax.swing.JFrame {
     private void initComponents() {
 
         TabbedGCUBake = new javax.swing.JTabbedPane();
+        pnlRegister = new javax.swing.JPanel();
+        txtFirstname = new javax.swing.JTextField();
+        txtLastname = new javax.swing.JTextField();
+        lblFirstName = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblLastName = new javax.swing.JLabel();
+        txtPhone = new javax.swing.JTextField();
+        lblEmail = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        lblPhone = new javax.swing.JLabel();
+        txtPassword = new javax.swing.JTextField();
+        lblTitle = new javax.swing.JLabel();
+        lblUsername = new javax.swing.JLabel();
+        lblPassword = new javax.swing.JLabel();
+        cmdGender = new javax.swing.JComboBox<String>();
+        btnRegister = new javax.swing.JButton();
         pnlView = new javax.swing.JPanel();
         lblViewMessage = new javax.swing.JLabel();
         ComboView = new javax.swing.JComboBox();
@@ -92,6 +108,109 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+
+        lblFirstName.setText("Firstname");
+
+        lblLastName.setText("Lastname");
+
+        lblEmail.setText("Email");
+
+        txtUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsernameActionPerformed(evt);
+            }
+        });
+
+        lblPhone.setText("Phone");
+
+        lblTitle.setText("Title");
+
+        lblUsername.setText("Username");
+
+        lblPassword.setText("Password");
+
+        cmdGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mr", "Mrs", "Other" }));
+
+        btnRegister.setText("Register");
+        btnRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegisterActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlRegisterLayout = new javax.swing.GroupLayout(pnlRegister);
+        pnlRegister.setLayout(pnlRegisterLayout);
+        pnlRegisterLayout.setHorizontalGroup(
+            pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegisterLayout.createSequentialGroup()
+                .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnlRegisterLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPhone)
+                            .addComponent(lblEmail)
+                            .addComponent(lblLastName)
+                            .addComponent(lblFirstName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtFirstname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
+                            .addComponent(txtEmail)
+                            .addComponent(txtLastname)
+                            .addComponent(txtPhone))
+                        .addGap(28, 28, 28)
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblPassword)
+                            .addComponent(lblUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(pnlRegisterLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegister, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)))
+                .addGap(39, 39, 39)
+                .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmdGender, 0, 114, Short.MAX_VALUE)
+                    .addComponent(txtUsername)
+                    .addComponent(txtPassword))
+                .addContainerGap())
+        );
+        pnlRegisterLayout.setVerticalGroup(
+            pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlRegisterLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblFirstName)
+                    .addComponent(cmdGender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFirstname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegisterLayout.createSequentialGroup()
+                        .addGap(24, 24, 24)
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblLastName)
+                            .addComponent(lblUsername)
+                            .addComponent(txtLastname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRegisterLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegisterLayout.createSequentialGroup()
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblEmail)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(30, 30, 30)
+                        .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lblPhone)
+                            .addComponent(txtPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblPassword)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addComponent(btnRegister)
+                .addGap(24, 24, 24))
+        );
+
+        TabbedGCUBake.addTab("Register", pnlRegister);
 
         pnlView.setName(""); // NOI18N
         pnlView.setRequestFocusEnabled(false);
@@ -165,7 +284,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblVStatus)
                     .addComponent(txtVStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         lblViewMessage.getAccessibleContext().setAccessibleName("view page");
@@ -208,7 +327,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addComponent(btnBook)
                 .addGap(56, 56, 56)
                 .addComponent(lblBookingConfirmation)
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(77, Short.MAX_VALUE))
         );
 
         TabbedGCUBake.addTab("Book Lesson", pnlBook);
@@ -258,7 +377,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateLayout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(lblCreateMessage)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCLessonID)
                     .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -362,7 +481,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                         .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblEStatus)
                             .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(43, Short.MAX_VALUE))
+                        .addContainerGap(44, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEdit)
@@ -412,7 +531,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(lblDeleteConfirmation)
-                .addContainerGap(82, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
 
         TabbedGCUBake.addTab("Delete Lesson", pnlDelete);
@@ -427,18 +546,18 @@ public class GUIGCUBake extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(lblUserView))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(106, Short.MAX_VALUE))
+                        .addContainerGap(45, Short.MAX_VALUE)
+                        .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(106, 106, 106))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addContainerGap(38, Short.MAX_VALUE)
                 .addComponent(lblUserView)
                 .addGap(54, 54, 54)
-                .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         TabbedGCUBake.getAccessibleContext().setAccessibleName("View Lesson");
@@ -526,6 +645,22 @@ public class GUIGCUBake extends javax.swing.JFrame {
         
         //confirmation given
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
+/*
+This class will call to the register method in the GCUUser_data_handeler class
+        
+        The code was moved to the methods stated above
+        
+        
+        */
+        
+        
+    }//GEN-LAST:event_btnRegisterActionPerformed
 
     // Methods here
     
@@ -686,6 +821,8 @@ public void userDisplay(){
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
+    private javax.swing.JButton btnRegister;
+    private javax.swing.JComboBox<String> cmdGender;
     private javax.swing.JComboBox comboBook;
     private javax.swing.JComboBox comboDelete;
     private javax.swing.JLabel lblBookMessage;
@@ -702,7 +839,14 @@ public void userDisplay(){
     private javax.swing.JLabel lblEStatus;
     private javax.swing.JLabel lblEType;
     private javax.swing.JLabel lblEditMessage;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblFirstName;
+    private javax.swing.JLabel lblLastName;
+    private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblPhone;
+    private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUserView;
+    private javax.swing.JLabel lblUsername;
     private javax.swing.JLabel lblVLessonName;
     private javax.swing.JLabel lblVName;
     private javax.swing.JLabel lblVStatus;
@@ -712,6 +856,7 @@ public void userDisplay(){
     private javax.swing.JPanel pnlCreate;
     private javax.swing.JPanel pnlDelete;
     private javax.swing.JPanel pnlEdit;
+    private javax.swing.JPanel pnlRegister;
     private javax.swing.JPanel pnlView;
     private javax.swing.JTextField txtCLessonID;
     private javax.swing.JTextField txtCName;
@@ -721,6 +866,12 @@ public void userDisplay(){
     private javax.swing.JTextField txtEName;
     private javax.swing.JTextField txtEStatus;
     private javax.swing.JTextField txtEType;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtFirstname;
+    private javax.swing.JTextField txtLastname;
+    private javax.swing.JTextField txtPassword;
+    private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtVLessonID;
     private javax.swing.JTextField txtVName;
     private javax.swing.JTextField txtVStatus;
