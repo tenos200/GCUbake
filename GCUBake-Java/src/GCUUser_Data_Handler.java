@@ -15,6 +15,7 @@ import java.sql.Statement;
  * @author Admin
  */
 public class GCUUser_Data_Handler {
+    Connection con = null;
     
     public GCUuser getValidUser(GCUuser pUser){
         //  boolean userExistsInDatabase = false;
@@ -67,6 +68,28 @@ public class GCUUser_Data_Handler {
 
     //==========================================================='  
     return (userExistsInDatabase);
+    }
+    
+    public void connection(){
+        
+        try{
+        String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
+        String username = "root";
+        String password = "Password";
+        con = DriverManager.getConnection(mysqlUrl ,username,password);
+        }
+        catch(Exception e){
+            System.err.println("Got an exception");
+            System.err.println(e.getMessage());
+        
+        
+        }
+        
+        
+    
+    
+    
+    
     }
     
     
