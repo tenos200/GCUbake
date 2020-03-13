@@ -17,6 +17,11 @@ public class DB_Utils {
     private static final String CONNECTIONSTRING = "jdbc:ucanaccess://" + DATAFOLDER + "\\" + DATAFILENAME; //DO NOT CHANGE
     private static final String DATABASEDRIVERCLASS="net.ucanaccess.jdbc.UcanaccessDriver";//DO NOT CHANGE
     
+    //Connection to my sql******************************
+    
+    //change the varibales for the methods**************************
+    
+    
     public static boolean isDatabaseDriversExist(){
     //Check to see if the drivers exist
       boolean exist=false;
