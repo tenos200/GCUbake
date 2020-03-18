@@ -6,6 +6,10 @@
 
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
@@ -18,7 +22,10 @@ import javax.swing.JTextField;
 public class GUIGCUBake extends javax.swing.JFrame {
     
     //Global variables
-    
+    Connection con = null;
+    PreparedStatement pst = null;
+    Statement stmt = null;
+    ResultSet rs = null;
     GCUuser theUser; 
     GCUUser_Data_Handler UserHandler;
 
@@ -53,7 +60,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
         lblTitle = new javax.swing.JLabel();
         lblUsername = new javax.swing.JLabel();
         lblPassword = new javax.swing.JLabel();
-        cmdGender = new javax.swing.JComboBox<String>();
+        cmdGender = new javax.swing.JComboBox<>();
         btnRegister = new javax.swing.JButton();
         pnlView = new javax.swing.JPanel();
         lblViewMessage = new javax.swing.JLabel();
@@ -129,7 +136,12 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
         lblPassword.setText("Password");
 
-        cmdGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mr", "Mrs", "Other" }));
+        cmdGender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mr", "Mrs", "Other" }));
+        cmdGender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdGenderActionPerformed(evt);
+            }
+        });
 
         btnRegister.setText("Register");
         btnRegister.addActionListener(new java.awt.event.ActionListener() {
@@ -650,16 +662,71 @@ public class GUIGCUBake extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsernameActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-/*
-This class will call to the register method in the GCUUser_data_handeler class
+        //Creates connection for the button press
+        UserHandler.connection();
         
-        The code was moved to the methods stated above
+	
+        try{
+
+            //create my mysql database connection
+            UserHandler.connection();
+            String query = "insert into User(title, firstname, lastname, contactNo, email, username, password)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            pst = con.prepareStatement(query);
+            //execute query(step 3)
+            
+           
+            pst.setString(1,cmdGender.getSelectedItem().toString());
+            pst.setString(2,txtFirstname.getText());
+            pst.setString(3,txtLastname.getText());
+            pst.setString(4,txtPhone.getText());
+            pst.setString(5,txtEmail.getText());
+            pst.setString(6,txtUsername.getText());
+            pst.setString(7,txtPassword.getText());
+            pst.execute();
+            
+
+            
+            /* inserts the values username and password into a separate table in the database and
+            makes use of the to ensure that the login is sercure(I will possibly make a change to
+            how the structure of the databases work since there is an security issue here
+            */
+            String query2 = "insert into Login(username, password)" + "VALUES (?, ?)";
+            pst = con.prepareStatement(query2);
+            pst.setString(1,txtUsername.getText());
+            pst.setString(2,txtPassword.getText());
+            
+            pst.execute();
+            con.close();
+            JOptionPane.showMessageDialog(null, "Registration completed!");
+            
+            //reset registration boxes into empty text
+            txtFirstname.setText("");
+            txtLastname.setText("");
+            txtPhone.setText("");
+            txtEmail.setText("");
+            txtUsername.setText("");
+            txtPassword.setText("");
+            
+           
+
+        }
+        catch (Exception e){
+
+            System.err.println("Got an exception");
+            System.err.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Something went wrong try to register again");
+
+
         
-        
-        */
-        
-        
+        } 
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+     
+    
+    private void cmdGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGenderActionPerformed
+    // TODO add your handling code here:
+    
+    }//GEN-LAST:event_cmdGenderActionPerformed
 
     // Methods here
     
