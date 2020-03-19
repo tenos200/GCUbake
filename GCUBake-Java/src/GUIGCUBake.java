@@ -14,6 +14,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import java.sql.DriverManager;
+import java.sql.Connection;
 
 /**
  *
@@ -27,13 +29,21 @@ public class GUIGCUBake extends javax.swing.JFrame {
     Statement stmt = null;
     ResultSet rs = null;
     GCUuser theUser; 
-    GCUUser_Data_Handler UserHandler;
+    GCUUser_Data_Handler UserHandler = new GCUUser_Data_Handler();
 
     /**
      * Creates new form GUIGCUBake
      */
     public GUIGCUBake() {
         initComponents();
+        UserHandler.createTables();
+        
+        
+        
+        
+       
+        
+        
     }
 
     /**
@@ -106,6 +116,12 @@ public class GUIGCUBake extends javax.swing.JFrame {
         comboDelete = new javax.swing.JComboBox();
         btnDelete = new javax.swing.JButton();
         lblDeleteConfirmation = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtStaffloginuser = new javax.swing.JTextField();
+        txtStaffloginpass = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         lblUserView = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,7 +181,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(lblFirstName))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtFirstname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(txtFirstname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
                             .addComponent(txtEmail)
                             .addComponent(txtLastname)
                             .addComponent(txtPhone))
@@ -180,7 +196,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                         .addGap(3, 3, 3)))
                 .addGap(39, 39, 39)
                 .addGroup(pnlRegisterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cmdGender, 0, 133, Short.MAX_VALUE)
+                    .addComponent(cmdGender, 0, 200, Short.MAX_VALUE)
                     .addComponent(txtUsername)
                     .addComponent(txtPassword))
                 .addContainerGap())
@@ -271,7 +287,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(ComboView, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblViewMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(276, Short.MAX_VALUE))
+                .addContainerGap(410, Short.MAX_VALUE))
         );
         pnlViewLayout.setVerticalGroup(
             pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +342,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                         .addGroup(pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBookingConfirmation)
                             .addComponent(btnBook))))
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
         pnlBookLayout.setVerticalGroup(
             pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,7 +398,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(txtCName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCreate))))
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(356, Short.MAX_VALUE))
         );
         pnlCreateLayout.setVerticalGroup(
             pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,7 +482,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(ComboEdit, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblEditMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         pnlEditLayout.setVerticalGroup(
             pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -530,7 +546,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlDeleteLayout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addComponent(lblDeleteConfirmation)))
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         pnlDeleteLayout.setVerticalGroup(
             pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,6 +564,61 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
         TabbedGCUBake.addTab("Delete Lesson", pnlDelete);
 
+        jLabel1.setText("Username:");
+
+        jLabel2.setText("Password:");
+
+        txtStaffloginuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtStaffloginuserActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Login");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(215, 215, 215)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(212, 212, 212)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                            .addComponent(txtStaffloginpass)
+                            .addComponent(txtStaffloginuser))))
+                .addContainerGap(302, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1)
+                .addGap(26, 26, 26)
+                .addComponent(txtStaffloginuser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(jLabel2)
+                .addGap(30, 30, 30)
+                .addComponent(txtStaffloginpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
+                .addComponent(jButton1)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+
+        TabbedGCUBake.addTab("Staff", jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -555,11 +626,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblUserView)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(76, 76, 76))
+                .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -579,93 +650,88 @@ public class GUIGCUBake extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         //test registering
-        //UserHandler.Register(theUser.test);
-        
         //register();
-        checklogin();
-        userDisplay();
+        //checklogin();
+        //userDisplay();
+       
+        
+        
         
     }//GEN-LAST:event_formWindowOpened
 
-    private void txtVStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVStatusActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtVStatusActionPerformed
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        //place items in the comboDelete from database
+
+        //collect selected item
+
+        //call from Lesson_Data_Handler class in deleteLesson() method
+
+        //confirmation given
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
+        //Edit lesson for the customer
+
+        //get connection of database
+
+        //display all of lesson id in the database in the
+
+        //when selected place all fields in the textboxes as in the GUI
+
+        //call from Lesson_Data_Handler class in editLesson() method
+
+        //Confirmation given
+
+    }//GEN-LAST:event_btnEditActionPerformed
 
     private void txtEStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEStatusActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEStatusActionPerformed
 
-    private void ComboViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboViewActionPerformed
-      //viewing lesson for the customer
-        
-        //get connection of database
-        
-        //display all of lesson id in the database in the  
-        
-        //when selected place all fields in the textboxes as in the GUI
-        
-        
-    }//GEN-LAST:event_ComboViewActionPerformed
+    private void ComboEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboEditActionPerformed
 
-    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
-        //booking lesson
-        
-        //customer selects which lesson by id from the database
-        
-        //btn clicked and calls method BookLesson()
-        
-        //shows a booking confirmation in the textbox called lblBookingconfirmation 
-        //followed by which lesson was booked by the customer
-       
-    }//GEN-LAST:event_btnBookActionPerformed
+    }//GEN-LAST:event_ComboEditActionPerformed
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
-        
-       //collects input data from te textboxes
-        
-       //calls the method in Lesson_Data_handler to createLesson()
-        
+
+        //collects input data from te textboxes
+
+        //calls the method in Lesson_Data_handler to createLesson()
+
         //Display confirmation of lesson
     }//GEN-LAST:event_btnCreateActionPerformed
 
-    private void ComboEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboEditActionPerformed
-        
-    }//GEN-LAST:event_ComboEditActionPerformed
+    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
+        //booking lesson
 
-    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        //Edit lesson for the customer
-        
-        //get connection of database
-        
-        //display all of lesson id in the database in the  
-        
-        //when selected place all fields in the textboxes as in the GUI
-        
-        //call from Lesson_Data_Handler class in editLesson() method
-        
-        //Confirmation given
-        
-    }//GEN-LAST:event_btnEditActionPerformed
+        //customer selects which lesson by id from the database
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        //place items in the comboDelete from database
-        
-        //collect selected item
-        
-        //call from Lesson_Data_Handler class in deleteLesson() method
-        
-        //confirmation given
-    }//GEN-LAST:event_btnDeleteActionPerformed
+        //btn clicked and calls method BookLesson()
 
-    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        //shows a booking confirmation in the textbox called lblBookingconfirmation
+        //followed by which lesson was booked by the customer
+
+    }//GEN-LAST:event_btnBookActionPerformed
+
+    private void txtVStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVStatusActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtUsernameActionPerformed
+    }//GEN-LAST:event_txtVStatusActionPerformed
+
+    private void ComboViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboViewActionPerformed
+        //viewing lesson for the customer
+
+        //get connection of database
+
+        //display all of lesson id in the database in the
+
+        //when selected place all fields in the textboxes as in the GUI
+
+    }//GEN-LAST:event_ComboViewActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
         //Creates connection for the button press
         UserHandler.connection();
-        
-	
+
         try{
 
             //create my mysql database connection
@@ -673,8 +739,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
             String query = "insert into User(title, firstname, lastname, contactNo, email, username, password)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
             pst = con.prepareStatement(query);
             //execute query(step 3)
-            
-           
+
             pst.setString(1,cmdGender.getSelectedItem().toString());
             pst.setString(2,txtFirstname.getText());
             pst.setString(3,txtLastname.getText());
@@ -683,51 +748,85 @@ public class GUIGCUBake extends javax.swing.JFrame {
             pst.setString(6,txtUsername.getText());
             pst.setString(7,txtPassword.getText());
             pst.execute();
-            
 
-            
             /* inserts the values username and password into a separate table in the database and
             makes use of the to ensure that the login is sercure(I will possibly make a change to
-            how the structure of the databases work since there is an security issue here
-            */
-            String query2 = "insert into Login(username, password)" + "VALUES (?, ?)";
-            pst = con.prepareStatement(query2);
-            pst.setString(1,txtUsername.getText());
-            pst.setString(2,txtPassword.getText());
-            
-            pst.execute();
-            con.close();
-            JOptionPane.showMessageDialog(null, "Registration completed!");
-            
-            //reset registration boxes into empty text
-            txtFirstname.setText("");
-            txtLastname.setText("");
-            txtPhone.setText("");
-            txtEmail.setText("");
-            txtUsername.setText("");
-            txtPassword.setText("");
-            
-           
+                how the structure of the databases work since there is an security issue here
+                */
+                String query2 = "insert into Login(username, password)" + "VALUES (?, ?)";
+                pst = con.prepareStatement(query2);
+                pst.setString(1,txtUsername.getText());
+                pst.setString(2,txtPassword.getText());
 
-        }
-        catch (Exception e){
+                pst.execute();
+                con.close();
+                JOptionPane.showMessageDialog(null, "Registration completed!");
 
-            System.err.println("Got an exception");
-            System.err.println(e.getMessage());
-            JOptionPane.showMessageDialog(null, "Something went wrong try to register again");
+                //reset registration boxes into empty text
+                txtFirstname.setText("");
+                txtLastname.setText("");
+                txtPhone.setText("");
+                txtEmail.setText("");
+                txtUsername.setText("");
+                txtPassword.setText("");
 
+            }
+            catch (Exception e){
 
-        
-        } 
+                System.err.println("Got an exception");
+                System.err.println(e.getMessage());
+                JOptionPane.showMessageDialog(null, "Something went wrong try to register again");
+
+            }
     }//GEN-LAST:event_btnRegisterActionPerformed
+
+    private void cmdGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGenderActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_cmdGenderActionPerformed
+
+    private void txtUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsernameActionPerformed
+
+    private void txtStaffloginuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtStaffloginuserActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtStaffloginuserActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //this tab I implemented to ensure that staff has a separate login page from customer
+          
+        try{
+            UserHandler.connection();
+            
+            
+        String query ="SELECT * FROM Staff Where username='"+txtStaffloginuser.getText()+ "' and password='" +txtStaffloginpass.getText() + "'";
+        pst=con.prepareStatement(query);
+        rs=pst.executeQuery();
+        
+        if(rs.next()){
+            JOptionPane.showMessageDialog(null, "Logged in as staff");
+            this.dispose();
+            
+            
+        }
+        
+        else{
+            JOptionPane.showMessageDialog(null, "Invalid credentials");
+            
+            
+            }                                        
+        } 
+    catch(Exception e){
+        JOptionPane.showMessageDialog(null, e);
+            
+            
+        }
+                                             
+    }//GEN-LAST:event_jButton1ActionPerformed
 
      
     
-    private void cmdGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGenderActionPerformed
-    // TODO add your handling code here:
-    
-    }//GEN-LAST:event_cmdGenderActionPerformed
-
     // Methods here
     
     
@@ -875,6 +974,7 @@ public void userDisplay(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new GUIGCUBake().setVisible(true);
+                
             }
         });
     }
@@ -891,6 +991,10 @@ public void userDisplay(){
     private javax.swing.JComboBox<String> cmdGender;
     private javax.swing.JComboBox comboBook;
     private javax.swing.JComboBox comboDelete;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBookMessage;
     private javax.swing.JLabel lblBookingConfirmation;
     private javax.swing.JLabel lblCLessonID;
@@ -937,6 +1041,8 @@ public void userDisplay(){
     private javax.swing.JTextField txtLastname;
     private javax.swing.JTextField txtPassword;
     private javax.swing.JTextField txtPhone;
+    private javax.swing.JTextField txtStaffloginpass;
+    private javax.swing.JTextField txtStaffloginuser;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JTextField txtVLessonID;
     private javax.swing.JTextField txtVName;

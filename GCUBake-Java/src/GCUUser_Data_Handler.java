@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /*
  * handles the data going through this to find the data between the sql and java
@@ -16,6 +17,7 @@ import java.sql.Statement;
  */
 public class GCUUser_Data_Handler {
     Connection con = null;
+    PreparedStatement pst = null;
     
     public GCUuser getValidUser(GCUuser pUser){
         //  boolean userExistsInDatabase = false;
@@ -76,7 +78,7 @@ public class GCUUser_Data_Handler {
         String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
         String username = "root";
         String password = "Password";
-        con = DriverManager.getConnection(mysqlUrl ,username,password);
+        con = DriverManager.getConnection(mysqlUrl, username, password);
         }
         catch(Exception e){
             System.err.println("Got an exception");
@@ -85,10 +87,48 @@ public class GCUUser_Data_Handler {
         
         }
         
+        }
+
+        protected void createTables(){
+            
+            try{
+            connection();
+            //A backend method which creates the tables on the specified unit if it does not exist
+            String createQuery1 = "CREATE TABLE IF NOT EXISTS User("
+                 + "userID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(userID),"
+                 + "title TEXT,"
+                 + "firstname TEXT,"
+                 + "lastname TEXT,"
+                 + "contactNo TEXT,"
+                 + "email TEXT,"
+                 + "username TEXT,"
+                 + "password TEXT);";
+         pst = con.prepareStatement(createQuery1);
+         pst.execute();
+         String createQuery2 = "CREATE TABLE IF NOT EXISTS Staff("
+                 + "staffID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(staffID),"
+                 + "role TEXT,"
+                 + "firstname TEXT,"
+                 + "lastname TEXT,"
+                 + "contactNo TEXT,"
+                 + "email TEXT,"
+                 + "username TEXT,"
+                 + "password TEXT);";
+         pst = con.prepareStatement(createQuery2);
+         pst.execute();
+         String createQuery3 = "CREATE TABLE IF NOT EXISTS Login("
+                 + "loginID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(loginID),"
+                 + "username TEXT,"
+                 + "password TEXT);";
+         pst = con.prepareStatement(createQuery3);
+         pst.execute();
+         con.close();
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+            
         
-    
-    
-    
     
     }
 

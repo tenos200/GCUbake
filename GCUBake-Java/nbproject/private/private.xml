@@ -3,10 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/DB_Utils.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GCUUser_Data_Handler.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GCULessons.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GUIGCUBake.java</file>
+=======
             <file>file:/Users/timenos/GCUBake-Java/src/GCUUser_Data_Handler.java</file>
-            <file>file:/Users/timenos/GCUBake-Java/src/Customer.java</file>
-            <file>file:/Users/timenos/GCUBake-Java/src/GUIGCUBake.java</file>
             <file>file:/Users/timenos/GCUBake-Java/src/GCUuser.java</file>
+            <file>file:/Users/timenos/GCUBake-Java/src/GUIGCUBake.java</file>
+>>>>>>> 088205ab647c84ff5da860f02ea778389d4f0b08
         </group>
     </open-files>
 </project-private>
