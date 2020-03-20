@@ -161,6 +161,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="txtFirstname">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFirstnameActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtLastname">
             </Component>
@@ -791,7 +794,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton1" pref="231" max="32767" attributes="0"/>
+                                  <Component id="btnStafflogin" pref="231" max="32767" attributes="0"/>
                                   <Component id="txtStaffloginpass" max="32767" attributes="0"/>
                                   <Component id="txtStaffloginuser" max="32767" attributes="0"/>
                               </Group>
@@ -813,7 +816,7 @@
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="txtStaffloginpass" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnStafflogin" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="19" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -837,12 +840,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="txtStaffloginpass">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="btnStafflogin">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStaffloginActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

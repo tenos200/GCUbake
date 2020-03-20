@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import java.sql.DriverManager;
-import java.sql.Connection;
+
 
 /**
  *
@@ -24,27 +24,46 @@ import java.sql.Connection;
 public class GUIGCUBake extends javax.swing.JFrame {
     
     //Global variables
-    Connection con = null;
     PreparedStatement pst = null;
+    Connection con = null;
     Statement stmt = null;
     ResultSet rs = null;
     GCUuser theUser; 
     GCUUser_Data_Handler UserHandler = new GCUUser_Data_Handler();
+    
 
     /**
      * Creates new form GUIGCUBake
      */
     public GUIGCUBake() {
         initComponents();
-        UserHandler.createTables();
-        
-        
-        
-        
-       
-        
+        UserHandler.createDatabase();
+        UserHandler.createTables();   
         
     }
+    
+    //had to add a duplicate of this method in order to get it to work
+    protected void connection(){
+        
+        try{
+        /* The details below may need to be adjust in order to connect on the local machine.
+            Mysql database in combination with the mysql-connector-java.jar (added to library) file will be required
+            in order to provide full functionality to the program and its database.
+            
+            */
+        String mysqlUrl = "jdbc:mysql://localhost/GCUBake";
+        String username = "root";
+        String password = "Password";
+        con = DriverManager.getConnection(mysqlUrl, username, password);
+        }
+        catch(Exception e){
+            System.err.println("Got an exception");
+            System.err.println(e.getMessage());
+        
+        }
+
+        }
+    //had to move this method into this class in order for it to work for some reason
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -121,7 +140,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         txtStaffloginuser = new javax.swing.JTextField();
         txtStaffloginpass = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnStafflogin = new javax.swing.JButton();
         lblUserView = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -129,6 +148,12 @@ public class GUIGCUBake extends javax.swing.JFrame {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
+            }
+        });
+
+        txtFirstname.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFirstnameActionPerformed(evt);
             }
         });
 
@@ -574,10 +599,10 @@ public class GUIGCUBake extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnStafflogin.setText("Login");
+        btnStafflogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnStaffloginActionPerformed(evt);
             }
         });
 
@@ -596,7 +621,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(121, 121, 121)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                            .addComponent(btnStafflogin, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                             .addComponent(txtStaffloginpass)
                             .addComponent(txtStaffloginuser))))
                 .addContainerGap(302, Short.MAX_VALUE))
@@ -613,7 +638,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(txtStaffloginpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jButton1)
+                .addComponent(btnStafflogin)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
@@ -729,37 +754,39 @@ public class GUIGCUBake extends javax.swing.JFrame {
     }//GEN-LAST:event_ComboViewActionPerformed
 
     private void btnRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegisterActionPerformed
-        //Creates connection for the button press
-        UserHandler.connection();
 
         try{
-
+            
             //create my mysql database connection
-            UserHandler.connection();
-            String query = "insert into User(title, firstname, lastname, contactNo, email, username, password)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            connection();
+            
+            String query = "INSERT INTO User(customerStatus ,title, firstname, lastname, contactNo, email, username, password)" 
+                    + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             pst = con.prepareStatement(query);
-            //execute query(step 3)
-
-            pst.setString(1,cmdGender.getSelectedItem().toString());
-            pst.setString(2,txtFirstname.getText());
-            pst.setString(3,txtLastname.getText());
-            pst.setString(4,txtPhone.getText());
-            pst.setString(5,txtEmail.getText());
-            pst.setString(6,txtUsername.getText());
-            pst.setString(7,txtPassword.getText());
+            
+            pst.setString(1,"Beginner");
+            pst.setString(2,cmdGender.getSelectedItem().toString());
+            pst.setString(3,txtFirstname.getText());
+            pst.setString(4,txtLastname.getText());
+            pst.setString(5,txtPhone.getText());
+            pst.setString(6,txtEmail.getText());
+            pst.setString(7,txtUsername.getText());
+            pst.setString(8,txtPassword.getText());
             pst.execute();
 
             /* inserts the values username and password into a separate table in the database and
             makes use of the to ensure that the login is sercure(I will possibly make a change to
                 how the structure of the databases work since there is an security issue here
                 */
-                String query2 = "insert into Login(username, password)" + "VALUES (?, ?)";
+                String query2 = "INSERT INTO Login(username, password)" 
+                        + "VALUES (?, ?)";
                 pst = con.prepareStatement(query2);
                 pst.setString(1,txtUsername.getText());
                 pst.setString(2,txtPassword.getText());
 
                 pst.execute();
-                con.close();
+                 
+                
                 JOptionPane.showMessageDialog(null, "Registration completed!");
 
                 //reset registration boxes into empty text
@@ -776,10 +803,13 @@ public class GUIGCUBake extends javax.swing.JFrame {
                 System.err.println("Got an exception");
                 System.err.println(e.getMessage());
                 JOptionPane.showMessageDialog(null, "Something went wrong try to register again");
+                
 
             }
     }//GEN-LAST:event_btnRegisterActionPerformed
 
+    
+        
     private void cmdGenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdGenderActionPerformed
         // TODO add your handling code here:
 
@@ -793,16 +823,15 @@ public class GUIGCUBake extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtStaffloginuserActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnStaffloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnStaffloginActionPerformed
         //this tab I implemented to ensure that staff has a separate login page from customer
           
         try{
-            UserHandler.connection();
-            
-            
+        connection();
         String query ="SELECT * FROM Staff Where username='"+txtStaffloginuser.getText()+ "' and password='" +txtStaffloginpass.getText() + "'";
         pst=con.prepareStatement(query);
         rs=pst.executeQuery();
+        
         
         if(rs.next()){
             JOptionPane.showMessageDialog(null, "Logged in as staff");
@@ -823,7 +852,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
             
         }
                                              
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnStaffloginActionPerformed
+
+    private void txtFirstnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFirstnameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFirstnameActionPerformed
 
      
     
@@ -988,10 +1021,10 @@ public void userDisplay(){
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnRegister;
+    private javax.swing.JButton btnStafflogin;
     private javax.swing.JComboBox<String> cmdGender;
     private javax.swing.JComboBox comboBook;
     private javax.swing.JComboBox comboDelete;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
