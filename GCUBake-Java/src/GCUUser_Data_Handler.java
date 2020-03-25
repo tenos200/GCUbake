@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
  * @author Admin
  */
 public class GCUUser_Data_Handler {
-    Connection con = null;
-    PreparedStatement pst = null;
+    Connection con;
+    PreparedStatement pst;
     
     public GCUuser getValidUser(GCUuser pUser){
         //  boolean userExistsInDatabase = false;
@@ -26,9 +26,9 @@ public class GCUUser_Data_Handler {
     
          try 
             {
-                Connection con=DB_Utils.getConnection();
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery ("SELECT * FROM user WHERE username='" + pUser.getUsername()+ "' AND " + " passcode =" + pUser.getPassCode());
+               
+                
+                ResultSet rs = pst.executeQuery ("SELECT * FROM user WHERE username='" + pUser.getUsername()+ "' AND " + " passcode =" + pUser.getPassCode());
                
                 rs.next();//move to first record
                 
@@ -71,11 +71,45 @@ public class GCUUser_Data_Handler {
     //==========================================================='  
     return (userExistsInDatabase);
     }
+    protected void createDatabase(){
+        try{
+        /*This method is essential for creating the database from the localhost if it does
+            not already exists it provides the necessary means the database and tables required to
+            be created.
+            
+            It should be noted that mysql-connector-java file needs to be attached to library
+            and mysql needs to be running on machine.
+            */
+        
+        String database = "jdbc:mysql://localhost/";
+        String username = "root";
+        String password = "Password";
+        
+        con = DriverManager.getConnection(database, username, password);
+        
+        String sql = "CREATE DATABASE IF NOT EXISTS GCUBake";
+        
+        pst = con.prepareStatement(sql);
+        pst.execute();
+        con.close();
+        }
+        
+        catch(Exception e){
+        System.err.println(e.getMessage());
+        
+        }
     
-    public void connection(){
+    
+    }
+    
+    protected void startConnection(){
         
         try{
-        String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
+        /* The details below may need to be adjust in order to connect on the local machine.
+            Mysql database in combination with the mysql-connector-java.jar (added to library) file will be required
+            in order to provide full functionality to the program and its database.
+            */
+        String mysqlUrl = "jdbc:mysql://localhost/GCUBake";
         String username = "root";
         String password = "Password";
         con = DriverManager.getConnection(mysqlUrl, username, password);
@@ -84,18 +118,21 @@ public class GCUUser_Data_Handler {
             System.err.println("Got an exception");
             System.err.println(e.getMessage());
         
-        
         }
-        
+
         }
+
 
         protected void createTables(){
             
             try{
-            connection();
+            
+            startConnection();
+            
             //A backend method which creates the tables on the specified unit if it does not exist
             String createQuery1 = "CREATE TABLE IF NOT EXISTS User("
                  + "userID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(userID),"
+                 + "customerStatus TEXT,"
                  + "title TEXT,"
                  + "firstname TEXT,"
                  + "lastname TEXT,"
@@ -103,8 +140,12 @@ public class GCUUser_Data_Handler {
                  + "email TEXT,"
                  + "username TEXT,"
                  + "password TEXT);";
+            
          pst = con.prepareStatement(createQuery1);
          pst.execute();
+         
+         
+         
          String createQuery2 = "CREATE TABLE IF NOT EXISTS Staff("
                  + "staffID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(staffID),"
                  + "role TEXT,"
@@ -114,15 +155,28 @@ public class GCUUser_Data_Handler {
                  + "email TEXT,"
                  + "username TEXT,"
                  + "password TEXT);";
+         
          pst = con.prepareStatement(createQuery2);
          pst.execute();
+         
          String createQuery3 = "CREATE TABLE IF NOT EXISTS Login("
                  + "loginID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(loginID),"
                  + "username TEXT,"
                  + "password TEXT);";
+         
          pst = con.prepareStatement(createQuery3);
          pst.execute();
+         
+         String createQuery4 = "CREATE TABLE IF NOT EXISTS Lessons("
+                 + "lessonID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(lessonID),"
+                 + "lessonType TEXT,"
+                 + "lessonSatus TEXT)";
+ 
+         pst = con.prepareStatement(createQuery4);
+         pst.execute();
+         
          con.close();
+         
             }
             catch(Exception e){
                 JOptionPane.showMessageDialog(null, e);
@@ -131,6 +185,7 @@ public class GCUUser_Data_Handler {
         
     
     }
+        
 
 public void DeleteUser()
 {
