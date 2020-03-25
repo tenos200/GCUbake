@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/GUIGCUBake.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>774</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+<<<<<<< HEAD
+            <file>file:/Users/timenos/GCUBake-Java/src/GCUUser_Data_Handler.java</file>
+            <file>file:/Users/timenos/GCUBake-Java/src/GUIGCUBake.java</file>
+=======
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/DB_Utils.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GCUUser_Data_Handler.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GCULessons.java</file>
+            <file>file:/Users/Crazykazar/Documents/GitHub/GCUbake/GCUBake-Java/src/GUIGCUBake.java</file>
+>>>>>>> d8c572c097aaf9ed9923176d0feb88debead9de6
+        </group>
+>>>>>>> 3775611b68032ebae8aea40c72086d60a12fd111
     </open-files>
 </project-private>
