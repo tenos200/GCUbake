@@ -8,7 +8,7 @@ import java.sql.Statement;
 import javax.swing.JOptionPane;
 
 /*
- * handles the data going through this to find the data between the sql and java
+ * handles the data going through this to find the data between the sql and java for users
  */
 
 /**
