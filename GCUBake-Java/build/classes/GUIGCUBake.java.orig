@@ -261,12 +261,9 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(ComboView, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblViewMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-<<<<<<< HEAD
                 .addContainerGap(357, Short.MAX_VALUE))
-=======
                 .addContainerGap(276, Short.MAX_VALUE))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
+        
         pnlViewLayout.setVerticalGroup(
             pnlViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlViewLayout.createSequentialGroup()
@@ -320,12 +317,8 @@ public class GUIGCUBake extends javax.swing.JFrame {
                         .addGroup(pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblBookingConfirmation)
                             .addComponent(btnBook))))
-<<<<<<< HEAD
                 .addContainerGap(299, Short.MAX_VALUE))
-=======
                 .addContainerGap(238, Short.MAX_VALUE))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
         pnlBookLayout.setVerticalGroup(
             pnlBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlBookLayout.createSequentialGroup()
@@ -380,12 +373,8 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(txtCName, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtCLessonID, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnCreate))))
-<<<<<<< HEAD
                 .addContainerGap(303, Short.MAX_VALUE))
-=======
                 .addContainerGap(241, Short.MAX_VALUE))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
         pnlCreateLayout.setVerticalGroup(
             pnlCreateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCreateLayout.createSequentialGroup()
@@ -468,12 +457,8 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(ComboEdit, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(lblEditMessage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-<<<<<<< HEAD
                 .addContainerGap(185, Short.MAX_VALUE))
-=======
                 .addContainerGap(124, Short.MAX_VALUE))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
         pnlEditLayout.setVerticalGroup(
             pnlEditLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlEditLayout.createSequentialGroup()
@@ -500,15 +485,11 @@ public class GUIGCUBake extends javax.swing.JFrame {
                             .addComponent(lblEStatus)
                             .addComponent(txtEStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-<<<<<<< HEAD
                         .addContainerGap(44, Short.MAX_VALUE))
-=======
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlEditLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnEdit)
                         .addGap(28, 28, 28))))
-        );
 
         TabbedGCUBake.addTab("Edit Lesson", pnlEdit);
 
@@ -540,12 +521,8 @@ public class GUIGCUBake extends javax.swing.JFrame {
                     .addGroup(pnlDeleteLayout.createSequentialGroup()
                         .addGap(197, 197, 197)
                         .addComponent(lblDeleteConfirmation)))
-<<<<<<< HEAD
                 .addContainerGap(257, Short.MAX_VALUE))
-=======
                 .addContainerGap(187, Short.MAX_VALUE))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
         pnlDeleteLayout.setVerticalGroup(
             pnlDeleteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDeleteLayout.createSequentialGroup()
@@ -567,31 +544,25 @@ public class GUIGCUBake extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblUserView))
                     .addGroup(layout.createSequentialGroup()
-<<<<<<< HEAD
                         .addGap(45, 45, 45)
                         .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 622, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-=======
                         .addContainerGap(45, Short.MAX_VALUE)
-                        .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(106, 106, 106))
->>>>>>> 55bbab93385dd5c3318b34803f01ed67747ae6ce
-=======
+                        .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106)
                 .addContainerGap()
                 .addComponent(lblUserView)
-                .addContainerGap(631, Short.MAX_VALUE))
+                .addContainerGap(631, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(TabbedGCUBake, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76))
->>>>>>> 9274733547ea80cbd508c0a604cf2ca9f17755c7
-        );
+        
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()

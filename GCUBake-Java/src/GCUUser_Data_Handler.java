@@ -5,9 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /*
- * handles the data going through this to find the data between the sql and java
+ * handles the data going through this to find the data between the sql and java for users
  */
 
 /**
@@ -15,7 +16,8 @@ import java.sql.Statement;
  * @author Admin
  */
 public class GCUUser_Data_Handler {
-    Connection con = null;
+    Connection con;
+    PreparedStatement pst;
     
     public GCUuser getValidUser(GCUuser pUser){
         //  boolean userExistsInDatabase = false;
@@ -24,9 +26,9 @@ public class GCUUser_Data_Handler {
     
          try 
             {
-                Connection con=DB_Utils.getConnection();
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery ("SELECT * FROM user WHERE username='" + pUser.getUsername()+ "' AND " + " passcode =" + pUser.getPassCode());
+               
+                
+                ResultSet rs = pst.executeQuery ("SELECT * FROM user WHERE username='" + pUser.getUsername()+ "' AND " + " passcode =" + pUser.getPassCode());
                
                 rs.next();//move to first record
                 
@@ -69,123 +71,121 @@ public class GCUUser_Data_Handler {
     //==========================================================='  
     return (userExistsInDatabase);
     }
-    
-    public void connection(){
-        
+    protected void createDatabase(){
         try{
-        String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
+        /*This method is essential for creating the database from the localhost if it does
+            not already exists it provides the necessary means the database and tables required to
+            be created.
+            
+            It should be noted that mysql-connector-java file needs to be attached to library
+            and mysql needs to be running on machine.
+            */
+        
+        String database = "jdbc:mysql://localhost/";
         String username = "root";
         String password = "Password";
-        con = DriverManager.getConnection(mysqlUrl ,username,password);
+        
+        con = DriverManager.getConnection(database, username, password);
+        
+        String sql = "CREATE DATABASE IF NOT EXISTS GCUBake";
+        
+        pst = con.prepareStatement(sql);
+        pst.execute();
+        con.close();
+        }
+        
+        catch(Exception e){
+        System.err.println(e.getMessage());
+        
+        }
+    
+    
+    }
+    
+    protected void startConnection(){
+        
+        try{
+        /* The details below may need to be adjust in order to connect on the local machine.
+            Mysql database in combination with the mysql-connector-java.jar (added to library) file will be required
+            in order to provide full functionality to the program and its database.
+            */
+        String mysqlUrl = "jdbc:mysql://localhost/GCUBake";
+        String username = "root";
+        String password = "Password";
+        con = DriverManager.getConnection(mysqlUrl, username, password);
         }
         catch(Exception e){
             System.err.println("Got an exception");
             System.err.println(e.getMessage());
         
-        
         }
+
+        }
+
+
+        protected void createTables(){
+            
+            try{
+            
+            startConnection();
+            
+            //A backend method which creates the tables on the specified unit if it does not exist
+            String createQuery1 = "CREATE TABLE IF NOT EXISTS User("
+                 + "userID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(userID),"
+                 + "customerStatus TEXT,"
+                 + "title TEXT,"
+                 + "firstname TEXT,"
+                 + "lastname TEXT,"
+                 + "contactNo TEXT,"
+                 + "email TEXT,"
+                 + "username TEXT,"
+                 + "password TEXT);";
+            
+         pst = con.prepareStatement(createQuery1);
+         pst.execute();
+         
+         
+         
+         String createQuery2 = "CREATE TABLE IF NOT EXISTS Staff("
+                 + "staffID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(staffID),"
+                 + "role TEXT,"
+                 + "firstname TEXT,"
+                 + "lastname TEXT,"
+                 + "contactNo TEXT,"
+                 + "email TEXT,"
+                 + "username TEXT,"
+                 + "password TEXT);";
+         
+         pst = con.prepareStatement(createQuery2);
+         pst.execute();
+         
+         String createQuery3 = "CREATE TABLE IF NOT EXISTS Login("
+                 + "loginID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(loginID),"
+                 + "username TEXT,"
+                 + "password TEXT);";
+         
+         pst = con.prepareStatement(createQuery3);
+         pst.execute();
+         
+         String createQuery4 = "CREATE TABLE IF NOT EXISTS Lessons("
+                 + "lessonID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(lessonID),"
+                 + "lessonType TEXT,"
+                 + "lessonSatus TEXT)";
+ 
+         pst = con.prepareStatement(createQuery4);
+         pst.execute();
+         
+         con.close();
+         
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+            
         
-        
-    
-    
-    
     
     }
-    
-    
-    //Other methods
-    
-public void Register(GCUuser test)
-{
-	  /*Integrate this part with buttons from GUI so values are recieved I used the values from the overload constructor as inputs into the register database.
-			*/
-
-        try{
-            //create my mysql database connection
-            
-            /*
-            create my mysql database connection
-						use this code for conneciton
-            String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake"; modify required database url for your machine
-            String username = "root";
-            String password = "";
-            
-            // get a connection(Step 1)
-            con = DriverManager.getConnection(mysqlUrl,username,password);
-            */
-            
-            Connection con = DB_Utils.getConnection();
-            Statement stmt = con.createStatement();
-            // get a connection(Step 1)
-            
-            //Create a statement(Step 2)
-            
-            String customerDefault = "defautl Customer";
-
-            //execute query(step 3)
-            String query = "INSERT INTO user (Title, firstname, lastname, username, passcode, role)" + "VALUES (?, ?, ?, ?, ?, ?)";
-
-            PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString(1,test.getTitle());
-            preparedStmt.setString(2,test.getFirstName());
-            preparedStmt.setString(3,test.getLastName());
-            preparedStmt.setInt(4,test.getContactNo());
-            preparedStmt.setString(5,test.getUsername());
-            preparedStmt.setInt(6,test.getPassCode());
-            preparedStmt.setString(6,customerDefault);
-            preparedStmt.execute();
-            con.close();
-            
-            /*
-            try{
-
-            //create my mysql database connection
-
-            String mysqlUrl = "jdbc:mysql://127.0.0.1:3306/GCUbake";
-            String username = "root";
-            String password = "abc123";
-            // get a connection(Step 1)
-            con = DriverManager.getConnection(mysqlUrl,username,password);
-            //Create a statement(Step 2)
-            String query = "insert into Customer (title, firstname, lastname, contactNo, email, username, password)" + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-            pst = con.prepareStatement(query);
-            //execute query(step 3)
-
-            pst.setString(1,cmdGender.getSelectedItem().toString());
-            pst.setString(2,txtFirstname.getText());
-            pst.setString(3,txtLastname.getText());
-            pst.setString(4,txtPhone.getText());
-            pst.setString(5,txtEmail.getText());
-            pst.setString(6,txtUsername.getText());
-            pst.setString(7,txtPassword.getText());
-
-            pst.execute();
-
-            con.close();
-
-        }
-        catch (Exception e){
-
-            System.err.println("Got an exception");
-            System.err.println(e.getMessage());
-
-        }
         
-            
-            */
-
-
-        }
-        catch (Exception e){
-
-            System.err.println("Got an exception");
-          System.err.println(e.getMessage());
-
-
-        }
-
-}
 
 public void DeleteUser()
 {
