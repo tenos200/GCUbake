@@ -590,8 +590,7 @@ public class GUIGCUBake extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void txtVStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVStatusActionPerformed
-        //
-      TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_txtVStatusActionPerformed
 
     private void txtEStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEStatusActionPerformed
